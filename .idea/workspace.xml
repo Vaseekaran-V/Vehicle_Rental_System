@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="045914ba-c134-4f72-ab94-9dc14338cd0f" name="Default Changelist" comment="" />
+    <list default="true" id="045914ba-c134-4f72-ab94-9dc14338cd0f" name="Default Changelist" comment="Added Delete and updated Add">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/OOP_CW/Bike.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/OOP_CW/Bike.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/OOP_CW/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/OOP_CW/Car.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/OOP_CW/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/OOP_CW/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/OOP_CW/RentalVehicleManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/OOP_CW/RentalVehicleManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/OOP_CW/Vehicle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/OOP_CW/Vehicle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/OOP_CW/WestminsterRentalVehicleManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/OOP_CW/WestminsterRentalVehicleManager.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,8 +25,13 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1UIQ0LH5Yx836Bltj3Xi500BNEU" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Tutorial2" />
@@ -72,11 +86,38 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1575041405226</updated>
-      <workItem from="1575041406695" duration="29954000" />
+      <workItem from="1575041406695" duration="46753000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added Delete and updated Add (2)" />
+    <MESSAGE value="Added Delete and updated Add (3)" />
+    <MESSAGE value="Added Delete and updated Add" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Delete and updated Add" />
   </component>
 </project>

@@ -4,18 +4,19 @@ import com.github.jmkgreen.morphia.annotations.Entity;
 
 import java.util.Objects;
 
-@Entity("Vehicle")
+@Entity
 public class Bike extends Vehicle {
     private String type; //whether it is a scooter, racing bike, or general
     private boolean helmet;
     private boolean jacket;
-    private static final String vehicleType = "Bike";
+    //private String vehicleType = "Bike";
 
 
     public Bike() {
     }
 
-    public Bike(String plate, String make, String model, double ratePerDay, String type, boolean helmet, boolean jacket) {
+    public Bike(String plate, String make, String model, double ratePerDay, String type, boolean helmet,
+                boolean jacket) {
         super(plate, make, model, ratePerDay);
         this.type = type;
         this.helmet = helmet;

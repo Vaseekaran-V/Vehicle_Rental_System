@@ -4,9 +4,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.github.jmkgreen.morphia.query.Query;
 import org.bson.Document;
-import java.util.Collections;
+
 import java.util.Scanner;
 
 public class WestminsterRentalVehicleManager implements RentalVehicleManager {
@@ -16,13 +15,23 @@ public class WestminsterRentalVehicleManager implements RentalVehicleManager {
     private List <Document> bikeList = new ArrayList<>();
     private List <Vehicle> vehicleArrayList = new ArrayList<>();
     private ConnectDB conn = new ConnectDB();
-    Scanner sc = new Scanner(System.in);
+    private Scanner sc = new Scanner(System.in);
+
+    public List<Document> vehicleDocument(){
+        conn.db.getCollection("Car").find().into(carList);
+        conn.db.getCollection("Bike").find().into(bikeList);
+
+        List <Document> vehicleDocuments = new ArrayList<>();
+        vehicleDocuments.addAll(carList);
+        vehicleDocuments.addAll(bikeList);
+
+        return vehicleDocuments;
+    }
 
     //code to display menu
-    public void displayMenu() throws IOException {
-        boolean check = true;
+    public void displayMenu(){
 
-        while (check){
+        while (true){
             System.out.println("<----------MENU---------->");
             System.out.println("1. Add a Vehicle. \n2. View all vehicles. \n3. Delete Vehicle. \n4. Save Vehicle. \n" +
                     "5. Open GUI. \n6. Exit Program");
@@ -57,6 +66,7 @@ public class WestminsterRentalVehicleManager implements RentalVehicleManager {
                 case 5:
                     System.out.println("You have chosen to open the GUI");
                     //code to open the GUI
+                    break;
 
                 case 6:
                     System.out.println("You have chosen to exit the program. \nThank you and have a nice day");
@@ -69,44 +79,15 @@ public class WestminsterRentalVehicleManager implements RentalVehicleManager {
         }
     }
 
-    /*public List <Car> carList() {
-        //List <Document> carList = conn.db.getCollection("Car").find().into(new ArrayList<>());
-        conn.db.getCollection("Car").find().into(carList);
-
-        for(Document car : carList){
-            Car cars = new Car(car.getString("plate"), car.getString("make"),car.getString("model"), car.getDouble("rentPerDay"),
-                    car.getInteger("noOfDoors"), car.getInteger("numOfLuggage"), car.getInteger("numOfPassengers"), car.getBoolean("airCon"),
-                    car.getBoolean("musicPlayer"));
-
-            carArrayList.add(cars);
-        }
-
-        return carArrayList;
-    }
-
-    public List <Bike> bikeList(){
-        conn.db.getCollection("Bike").find().into(bikeList);
-
-        for(Document bike : bikeList){
-            Bike bikes = new Bike(bike.getString("plate"), bike.getString("make"), bike.getString("model"),
-                    bike.getDouble("ratePerDay"), bike.getString("type"), bike.getBoolean("helmet"),
-                    bike.getBoolean("jacket"));
-
-            bikeArrayList.add(bikes);
-        }
-
-        return bikeArrayList;
-
-    }*/
-
-    public List <Vehicle> listOfVehicles(){
+    public List <Vehicle> getListOfVehicles(){
+        vehicleArrayList.clear();
         conn.db.getCollection("Car").find().into(carList);
         conn.db.getCollection("Bike").find().into(bikeList);
 
         if(carList.size() != 0) {
 
             for (Document car : carList) {
-                Car objectCar = new Car(car.getString("plate"), car.getString("make"),
+                Car objectCar = new Car(car.getString("_id"), car.getString("make"),
                         car.getString("model"),
                         car.getDouble("ratePerDay"),
                         car.getInteger("noOfDoors"),
@@ -124,7 +105,7 @@ public class WestminsterRentalVehicleManager implements RentalVehicleManager {
 
         if(bikeList.size() != 0) {
             for (Document bike : bikeList) {
-                Bike bikes = new Bike(bike.getString("plate"), bike.getString("make"),
+                Bike bikes = new Bike(bike.getString("_id"), bike.getString("make"),
                         bike.getString("model"),
                         bike.getDouble("ratePerDay"),
                         bike.getString("type"), bike.getBoolean("helmet"),
@@ -133,7 +114,7 @@ public class WestminsterRentalVehicleManager implements RentalVehicleManager {
                 vehicleArrayList.add(bikes);
                 bikeArrayList.add(bikes);
             }
-            return vehicleArrayList;
+            //return vehicleArrayList;
         }else{
             System.out.println("No bikes");
         }
@@ -151,44 +132,40 @@ public class WestminsterRentalVehicleManager implements RentalVehicleManager {
     public boolean checkParkingAvailable(){
         int vehiclesInParking = vehicleArrayList.size();
 
-        if(vehiclesInParking < 50){
-            return true;
-        }else{
-            return false;
-        }
+        return vehiclesInParking<50;
     }
 
     public WestminsterRentalVehicleManager() {
     }
 
     public void addCar(Car car){
-        listOfVehicles().add(car);
+        getListOfVehicles().add(car);
     }
 
     public void addBike(Bike bike){
-        listOfVehicles().add(bike);
+        getListOfVehicles().add(bike);
     }
 
     public void deleteCar(Car car){
         //carList().remove(car);
-        listOfVehicles().remove(car);
+        getListOfVehicles().remove(car);
 
-        int availableParkingLot = 50 - listOfVehicles().size();
+        int availableParkingLot = 50 - getListOfVehicles().size();
         System.out.println("You can add " + availableParkingLot + " vehicles to the Parking Lot");
 
     }
 
     public void deleteBike(Bike bike) {
         //bikeList().remove(bike);
-        listOfVehicles().remove(bike);
+        getListOfVehicles().remove(bike);
 
-        int availableParkingLot = 50 - listOfVehicles().size();
+        int availableParkingLot = 50 - getListOfVehicles().size();
         System.out.println("You can add " + availableParkingLot + " vehicles to the Parking Lot");
 
     }
 
     @Override
-    public void addVehicle() throws IOException {
+    public void addVehicle() {
         Scanner sc1 = new Scanner(System.in);
 
         if(checkParkingAvailable()) {
@@ -219,7 +196,6 @@ public class WestminsterRentalVehicleManager implements RentalVehicleManager {
             }
             int choiceVehicle = sc.nextInt();
             boolean bigCheck = true;
-
             while (bigCheck) {
 
                 switch (choiceVehicle) {
@@ -280,12 +256,12 @@ public class WestminsterRentalVehicleManager implements RentalVehicleManager {
 
                                 default:
                                     System.out.println("Incorrect option. Try again");
-                                    check = true;
+                                    check2 = true;
                             }
                         }
 
                         conn.datastore.save(bike);
-                        listOfVehicles().add(bike);
+                        getListOfVehicles().add(bike);
                         System.out.println("The bike with the plate " + bike.getPlate() + " is added successfully");
                         bigCheck = false;
                         break;
@@ -383,38 +359,51 @@ public class WestminsterRentalVehicleManager implements RentalVehicleManager {
 
     @Override
     public void deleteVehicle() {
+//        vehicleArrayList = getListOfVehicles();
+        Scanner sc2 = new Scanner(System.in);
+        System.out.println("Enter the plate number of the vehicle: ");
+        String toDelete = sc2.nextLine();
+        boolean checkIfExisted = false;
 
 
+        for (Vehicle vehicle : vehicleArrayList) {
+            System.out.println(vehicleArrayList);
+            if (vehicle.getPlate().equals(toDelete)) {
+                vehicleArrayList.remove(vehicle);
+                checkIfExisted = true;
+
+                for (Document docVehicle : vehicleDocument()) {
+
+                    if (docVehicle.getString("_id").equals(toDelete)) {
+                        String type = docVehicle.getString("className");
+
+                        String [] typeList = type.split("\\.");
+
+                        String collectionName = typeList[typeList.length - 1];
+
+                        System.out.println(type + " " + conn.db.getCollection(type).find());
+                        conn.db.getCollection(collectionName).deleteOne(new Document("_id", toDelete));
+                        break;
+                    }
+                    else {
+                        System.out.println("There is no vehicles with " + toDelete + " plate number in the " +
+                                "database");
+                    }
+                }
+            }
+
+            if (checkIfExisted) {
+                System.out.println("The vehicle is deleted successfully");
+                break;
+            } else {
+                System.out.println("The vehicle is not in the database.");
+            }
+        }
     }
 
     @Override
     public void viewVehicles() {
-        /*if(vehicleList().size() == 0){
-            System.out.println("There are no cars/bikes in the viewing lot. \n" +
-                    "Please add a Vehicle");
-        }else{
-            Collections.sort(bikeList());
-            for(Bike bike: bikeList()){
-                System.out.println("<-------Bikes in the System------->");
-                if(bikeList().size() == 0){
-                    System.out.println("There are no bikes added to the system");
-                }else{
-                    System.out.println("Plate Number \t\tMake");
-                    System.out.println(bike.getPlate() + "\t\t"+bike.getMake());
-                }
-            }
 
-            Collections.sort(carList());
-            for(Car car: carList()){
-                System.out.println("<------- Cars in the System ------->");
-                if(carList().size() == 0){
-                    System.out.println("There are no cars added to the system");
-                }else{
-                    System.out.println("Plate Number \t\tMake");
-                    System.out.println(car.getPlate() + "\t\t" + car.getMake());
-                }
-            }
-        }*/
     }
 
     @Override
@@ -428,7 +417,7 @@ public class WestminsterRentalVehicleManager implements RentalVehicleManager {
         while(true){
             //System.out.println("Enter the plate of the vehicle");
             //String plate = sc3.nextLine();
-            for(Vehicle vehicle: listOfVehicles()){
+            for(Vehicle vehicle: getListOfVehicles()){
                 if(vehicle.getPlate().contains(plate)){
                     System.out.println("There is a vehicle with the same plate. \nTry again");
                     break;
@@ -441,10 +430,15 @@ public class WestminsterRentalVehicleManager implements RentalVehicleManager {
         }
     }
 
-    public static void main(String[] args) throws IOException {
+//    public void begin() throws IOException {
+//        vehicleArrayList = getListOfVehicles();
+//        displayMenu();
+//    }
+
+    public static void main(String[] args) {
         WestminsterRentalVehicleManager manager = new WestminsterRentalVehicleManager();
-        //manager.listOfVehicles();
-        System.out.println(manager.listOfVehicles() + ", size of carslist: " + manager.carArrayList.size());
-        manager.addVehicle();
+        manager.getListOfVehicles();
+        System.out.println(manager.vehicleArrayList);
+        manager.deleteVehicle();
     }
 }

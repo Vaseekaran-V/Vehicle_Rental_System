@@ -4,32 +4,36 @@ import com.github.jmkgreen.morphia.annotations.Entity;
 
 import java.util.Objects;
 
-@Entity("Vehicle")
+@Entity
 public class Car extends Vehicle{
     private int noOfDoors;
     private int numOfLuggage;
     private int numOfPassengers;
     private boolean airCon;
     private boolean musicPlayer;
-    private static final String vehicleType = "Car";
+//    private String vehicleType = "Car";
 
     public Car() {
     }
 
-    public Car(String plate, String make, String model, double ratePerDay, int noOfDoors, int numOfLuggage, int numOfPassengers, boolean airCon, boolean musicPlayer) {
+    public Car(String plate, String make, String model, double ratePerDay, int noOfDoors, int numOfLuggage,
+               int numOfPassengers, boolean airCon, boolean musicPlayer) {
         super(plate, make, model, ratePerDay);
         this.noOfDoors = noOfDoors;
         this.numOfLuggage = numOfLuggage;
         this.numOfPassengers = numOfPassengers;
         this.airCon = airCon;
         this.musicPlayer = musicPlayer;
+        //this.vehicleType = vehicleType;
     }
 
-    public Car(String plate, String make, String model, double ratePerDay, int noOfDoors, int numOfLuggage, int numOfPassengers) {
+    public Car(String plate, String make, String model, double ratePerDay, int noOfDoors, int numOfLuggage,
+               int numOfPassengers) {
         super(plate, make, model, ratePerDay);
         this.noOfDoors = noOfDoors;
         this.numOfLuggage = numOfLuggage;
         this.numOfPassengers = numOfPassengers;
+       // this.vehicleType = vehicleType;
     }
 
     public int getNoOfDoors() {
@@ -71,6 +75,10 @@ public class Car extends Vehicle{
     public void setMusicPlayer(boolean musicPlayer) {
         this.musicPlayer = musicPlayer;
     }
+
+//    public String getVehicleType() {
+//        return vehicleType;
+//    }
 
     @Override
     public String toString() {
