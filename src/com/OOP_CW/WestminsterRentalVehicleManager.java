@@ -1,11 +1,8 @@
 package com.OOP_CW;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
 import org.bson.Document;
-
 import java.util.Scanner;
 
 public class WestminsterRentalVehicleManager implements RentalVehicleManager {
@@ -16,6 +13,7 @@ public class WestminsterRentalVehicleManager implements RentalVehicleManager {
     private List <Vehicle> vehicleArrayList = new ArrayList<>();
     private ConnectDB conn = new ConnectDB();
     private Scanner sc = new Scanner(System.in);
+    private List <String> addedPlates = new ArrayList<>();
 
     public List<Document> vehicleDocument(){
         conn.db.getCollection("Car").find().into(carList);
@@ -26,6 +24,24 @@ public class WestminsterRentalVehicleManager implements RentalVehicleManager {
         vehicleDocuments.addAll(bikeList);
 
         return vehicleDocuments;
+    }
+
+    public List <String> getPlates(){
+        for(Vehicle vehicle: vehicleArrayList){
+            String plate = vehicle.getPlate();
+            addedPlates.add(plate);
+        }
+        return addedPlates;
+    }
+
+    public Boolean checkPlate(String plate){
+        for(String str : getPlates()){
+            if(str.equals(plate)){
+                System.out.println("The plate is already present in the system.");
+                return true;
+            }
+        }
+        return false;
     }
 
     //code to display menu
@@ -95,7 +111,6 @@ public class WestminsterRentalVehicleManager implements RentalVehicleManager {
                         car.getInteger("numOfPassengers"), car.getBoolean("airCon"),
                         car.getBoolean("musicPlayer"));
 
-
                 vehicleArrayList.add(objectCar);
                 carArrayList.add(objectCar);
             }
@@ -122,13 +137,6 @@ public class WestminsterRentalVehicleManager implements RentalVehicleManager {
         return vehicleArrayList;
     }
 
-    /*public List <Vehicle> vehicleList(){
-        vehicleArrayList.addAll(carList());
-        vehicleArrayList.addAll(bikeList());
-
-        return vehicleArrayList;
-    }*/
-
     public boolean checkParkingAvailable(){
         int vehiclesInParking = vehicleArrayList.size();
 
@@ -147,7 +155,6 @@ public class WestminsterRentalVehicleManager implements RentalVehicleManager {
     }
 
     public void deleteCar(Car car){
-        //carList().remove(car);
         getListOfVehicles().remove(car);
 
         int availableParkingLot = 50 - getListOfVehicles().size();
@@ -156,7 +163,6 @@ public class WestminsterRentalVehicleManager implements RentalVehicleManager {
     }
 
     public void deleteBike(Bike bike) {
-        //bikeList().remove(bike);
         getListOfVehicles().remove(bike);
 
         int availableParkingLot = 50 - getListOfVehicles().size();
@@ -173,6 +179,10 @@ public class WestminsterRentalVehicleManager implements RentalVehicleManager {
             //String plate = checkForPlate();
             System.out.println("Enter the plate: ");
             String plate = sc.nextLine();
+            while(checkPlate(plate)){
+                System.out.println("The plate is already there. Try again.");
+                plate = sc.nextLine();
+            }
 
             System.out.println("Enter the make of the vehicle:");
             String make = sc.next();
@@ -365,7 +375,6 @@ public class WestminsterRentalVehicleManager implements RentalVehicleManager {
         String toDelete = sc2.nextLine();
         boolean checkIfExisted = false;
 
-
         for (Vehicle vehicle : vehicleArrayList) {
             System.out.println(vehicleArrayList);
             if (vehicle.getPlate().equals(toDelete)) {
@@ -411,25 +420,6 @@ public class WestminsterRentalVehicleManager implements RentalVehicleManager {
 
     }
 
-    public String checkForPlate(String plate){
-        //Scanner sc3 = new Scanner(System.in);
-        //boolean checker = true;
-        while(true){
-            //System.out.println("Enter the plate of the vehicle");
-            //String plate = sc3.nextLine();
-            for(Vehicle vehicle: getListOfVehicles()){
-                if(vehicle.getPlate().contains(plate)){
-                    System.out.println("There is a vehicle with the same plate. \nTry again");
-                    break;
-
-                }else{
-                    return plate;
-
-                }
-            }
-        }
-    }
-
 //    public void begin() throws IOException {
 //        vehicleArrayList = getListOfVehicles();
 //        displayMenu();
@@ -439,6 +429,6 @@ public class WestminsterRentalVehicleManager implements RentalVehicleManager {
         WestminsterRentalVehicleManager manager = new WestminsterRentalVehicleManager();
         manager.getListOfVehicles();
         System.out.println(manager.vehicleArrayList);
-        manager.deleteVehicle();
+        manager.addVehicle();
     }
 }

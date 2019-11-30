@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="045914ba-c134-4f72-ab94-9dc14338cd0f" name="Default Changelist" comment="Added Delete and updated Add">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="045914ba-c134-4f72-ab94-9dc14338cd0f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/OOP_CW/Bike.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/OOP_CW/Bike.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/OOP_CW/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/OOP_CW/Car.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/OOP_CW/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/OOP_CW/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/OOP_CW/RentalVehicleManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/OOP_CW/RentalVehicleManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/OOP_CW/Vehicle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/OOP_CW/Vehicle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RentalManagementSystem/com/OOP_CW/Bike.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RentalManagementSystem/com/OOP_CW/Bike.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RentalManagementSystem/com/OOP_CW/Car.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RentalManagementSystem/com/OOP_CW/Car.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RentalManagementSystem/com/OOP_CW/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RentalManagementSystem/com/OOP_CW/Customer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RentalManagementSystem/com/OOP_CW/RentalVehicleManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RentalManagementSystem/com/OOP_CW/RentalVehicleManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RentalManagementSystem/com/OOP_CW/Vehicle.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RentalManagementSystem/com/OOP_CW/Vehicle.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RentalManagementSystem/com/OOP_CW/WestminsterRentalVehicleManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RentalManagementSystem/com/OOP_CW/WestminsterRentalVehicleManager.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/OOP_CW/WestminsterRentalVehicleManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/OOP_CW/WestminsterRentalVehicleManager.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -86,8 +86,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1575041405226</updated>
-      <workItem from="1575041406695" duration="46753000" />
+      <workItem from="1575041406695" duration="48934000" />
     </task>
+    <task id="LOCAL-00001" summary="Added Delete and updated Add">
+      <created>1575114094437</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1575114094437</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
