@@ -1,5 +1,6 @@
 package com.OOP_CW;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import org.bson.Document;
@@ -26,7 +27,9 @@ public class WestminsterRentalVehicleManager implements RentalVehicleManager {
         return vehicleDocuments;
     }
 
+    //get all the plates of te vehicles in the database
     public List <String> getPlates(){
+        addedPlates.clear();
         for(Vehicle vehicle: vehicleArrayList){
             String plate = vehicle.getPlate();
             addedPlates.add(plate);
@@ -34,6 +37,7 @@ public class WestminsterRentalVehicleManager implements RentalVehicleManager {
         return addedPlates;
     }
 
+    //check if there is an existing plate of the vehicle
     public Boolean checkPlate(String plate){
         for(String str : getPlates()){
             if(str.equals(plate)){
@@ -46,17 +50,19 @@ public class WestminsterRentalVehicleManager implements RentalVehicleManager {
 
     //code to display menu
     public void displayMenu(){
+        Scanner menuChoice = new Scanner(System.in);
 
         while (true){
             System.out.println("<----------MENU---------->");
             System.out.println("1. Add a Vehicle. \n2. View all vehicles. \n3. Delete Vehicle. \n4. Save Vehicle. \n" +
                     "5. Open GUI. \n6. Exit Program");
             System.out.println("**** ENTER THE NUMBER OF YOUR CHOICE ****");
-            while (!sc.hasNextInt()) {
+            while (!menuChoice.hasNextInt()) {
                 System.out.println("Incorrect input.\n Choose an input from 1 to 6");
-                sc.next();
+                menuChoice.next();
+
             }
-            int choice = sc.nextInt();
+            int choice = menuChoice.nextInt();
 
             switch(choice){
                 case 1:
@@ -115,7 +121,7 @@ public class WestminsterRentalVehicleManager implements RentalVehicleManager {
                 carArrayList.add(objectCar);
             }
         }else{
-            System.out.println("There are no cars in the system.");
+            System.out.println("There are no cars added in the system.");
         }
 
         if(bikeList.size() != 0) {
@@ -129,9 +135,8 @@ public class WestminsterRentalVehicleManager implements RentalVehicleManager {
                 vehicleArrayList.add(bikes);
                 bikeArrayList.add(bikes);
             }
-            //return vehicleArrayList;
         }else{
-            System.out.println("No bikes");
+            System.out.println("There are no bikes added to the system.");
         }
 
         return vehicleArrayList;
@@ -140,34 +145,36 @@ public class WestminsterRentalVehicleManager implements RentalVehicleManager {
     public boolean checkParkingAvailable(){
         int vehiclesInParking = vehicleArrayList.size();
 
-        return vehiclesInParking<50;
+        return vehiclesInParking < 50;
+    }
+
+    public void getParkingSpace(){
+        int remainingSpace = 50 - vehicleArrayList.size();
+        System.out.println("There are " + remainingSpace + " parking spaces available.");
     }
 
     public WestminsterRentalVehicleManager() {
     }
 
     public void addCar(Car car){
-        getListOfVehicles().add(car);
+        vehicleArrayList.add(car);
+        carArrayList.add(car);
     }
 
     public void addBike(Bike bike){
-        getListOfVehicles().add(bike);
+        vehicleArrayList.add(bike);
+        bikeArrayList.add(bike);
     }
 
-    public void deleteCar(Car car){
-        getListOfVehicles().remove(car);
+    public void removeVehicle(Vehicle vehicle){
+        vehicleArrayList.remove(vehicle);
+        carArrayList.remove(vehicle);
+        bikeArrayList.remove(vehicle);
 
-        int availableParkingLot = 50 - getListOfVehicles().size();
-        System.out.println("You can add " + availableParkingLot + " vehicles to the Parking Lot");
+        String deletedPlate = vehicle.getPlate();
+        getPlates().remove(deletedPlate);
 
-    }
-
-    public void deleteBike(Bike bike) {
-        getListOfVehicles().remove(bike);
-
-        int availableParkingLot = 50 - getListOfVehicles().size();
-        System.out.println("You can add " + availableParkingLot + " vehicles to the Parking Lot");
-
+        getParkingSpace();
     }
 
     @Override
@@ -175,37 +182,38 @@ public class WestminsterRentalVehicleManager implements RentalVehicleManager {
         Scanner sc1 = new Scanner(System.in);
 
         if(checkParkingAvailable()) {
+            getParkingSpace();
 
-            //String plate = checkForPlate();
             System.out.println("Enter the plate: ");
-            String plate = sc.nextLine();
-            while(checkPlate(plate)){
+            String plate = sc1.nextLine();
+            while (checkPlate(plate)) {
                 System.out.println("The plate is already there. Try again.");
-                plate = sc.nextLine();
+                plate = sc1.nextLine();
             }
 
             System.out.println("Enter the make of the vehicle:");
-            String make = sc.next();
+            String make = sc1.nextLine();
 
             System.out.println("Enter the model of the vehicle:");
-            String model = sc.next();
+            String model = sc1.nextLine();
 
             System.out.println("Enter the cost per day of renting the vehicle:");
-            while (!sc.hasNextDouble()) {
+            while (!sc1.hasNextDouble()) {
                 System.out.println("Incorrect type of input. Enter the daily rate of the vehicle with the correct " +
                         "data type.");
-                sc.next();
+                sc1.next();
             }
-            double ratePerDay = sc.nextDouble();
+            double ratePerDay = sc1.nextDouble();
 
             System.out.println("Enter the type of Vehicle: \n1. Bike. \n2.Car");
 
-            while (!sc.hasNextInt()) {
+            while (!sc1.hasNextInt()) {
                 System.out.println("Incorrect input.\n Choose an input from 1 to 6");
-                sc.next();
+                sc1.next();
             }
-            int choiceVehicle = sc.nextInt();
+            int choiceVehicle = sc1.nextInt();
             boolean bigCheck = true;
+            Scanner sc_2 = new Scanner(System.in);
             while (bigCheck) {
 
                 switch (choiceVehicle) {
@@ -213,18 +221,18 @@ public class WestminsterRentalVehicleManager implements RentalVehicleManager {
                         System.out.println("You have chosen to add a Bike");
 
                         System.out.println("Enter the type of Bike: ");
-                        String bikeType = sc.next();
+                        String bikeType = sc_2.nextLine();
 
                         //Initializing a Bike object
                         Bike bike = new Bike(plate, make, model, ratePerDay, bikeType);
 
                         System.out.println("Enter if the bike comes with a helmet: (1 if Yes; 2 if No");
 
-                        while (!sc.hasNextInt()) {
+                        while (!sc_2.hasNextInt()) {
                             System.out.println("Incorrect type of input.");
-                            sc.next();
+                            sc_2.next();
                         }
-                        int isHelmet = sc.nextInt();
+                        int isHelmet = sc_2.nextInt();
                         boolean check = true;
 
                         while (check) {
@@ -246,11 +254,11 @@ public class WestminsterRentalVehicleManager implements RentalVehicleManager {
                         }
 
                         System.out.println("Enter if the bike comes with a jacket: ");
-                        while (!sc.hasNextInt()) {
+                        while (!sc_2.hasNextInt()) {
                             System.out.println("Incorrect type of input.");
-                            sc.next();
+                            sc_2.next();
                         }
-                        int isJacket = sc.nextInt();
+                        int isJacket = sc_2.nextInt();
                         boolean check2 = true;
                         while (check2) {
                             switch (isJacket) {
@@ -271,7 +279,7 @@ public class WestminsterRentalVehicleManager implements RentalVehicleManager {
                         }
 
                         conn.datastore.save(bike);
-                        getListOfVehicles().add(bike);
+                        addBike(bike);
                         System.out.println("The bike with the plate " + bike.getPlate() + " is added successfully");
                         bigCheck = false;
                         break;
@@ -280,25 +288,25 @@ public class WestminsterRentalVehicleManager implements RentalVehicleManager {
                         System.out.println("You have chosen to add a car");
 
                         System.out.println("Enter the number of doors in the car: ");
-                        while (!sc.hasNextInt()) {
+                        while (!sc_2.hasNextInt()) {
                             System.out.println("Incorrect type. Enter the number of doors in the car");
-                            sc.next();
+                            sc_2.next();
                         }
-                        int numOfDoors = sc.nextInt();
+                        int numOfDoors = sc_2.nextInt();
 
                         System.out.println("Enter the number of luggage the car can carry: ");
-                        while (!sc.hasNextInt()) {
+                        while (!sc_2.hasNextInt()) {
                             System.out.println("Incorrect type. Enter the number of luggage that can be in the car");
-                            sc.next();
+                            sc_2.next();
                         }
-                        int numOfLuggage = sc.nextInt();
+                        int numOfLuggage = sc_2.nextInt();
 
                         System.out.println("Enter the number of passengers that can be in the car: ");
-                        while (!sc.hasNextInt()) {
+                        while (!sc_2.hasNextInt()) {
                             System.out.println("Incorrect type. Enter the number of passengers that can be in the car");
-                            sc.next();
+                            sc_2.next();
                         }
-                        int numOfPassengers = sc.nextInt();
+                        int numOfPassengers = sc_2.nextInt();
 
                         //instantiating a new car object
                         Car car = new Car(plate, make, model, ratePerDay, numOfDoors, numOfLuggage, numOfPassengers);
@@ -307,12 +315,12 @@ public class WestminsterRentalVehicleManager implements RentalVehicleManager {
                         while (check2) {
                             System.out.println("Does the car has Air Conditioning \nPress 1 if \"yes\"\nPress 2 if" +
                                     " \"no\"");
-                            while (!sc.hasNextInt()) {
+                            while (!sc_2.hasNextInt()) {
                                 System.out.println("Incorrect input. \nDoes the car has A/C? \nPress 1 if \"yes\"\nPress" +
                                         " 2 if \"no\" ");
-                                sc.next();
+                                sc_2.next();
                             }
-                            int checkAC = sc.nextInt();
+                            int checkAC = sc_2.nextInt();
                             switch (checkAC) {
                                 case 1:
                                     check2 = false;
@@ -332,12 +340,12 @@ public class WestminsterRentalVehicleManager implements RentalVehicleManager {
                         boolean check3 = true;
                         while (check3) {
                             System.out.println("Does the car has Music Player \nPress 1 if \"yes\"\nPress 2 if \"no\"");
-                            while (!sc.hasNextInt()) {
+                            while (!sc_2.hasNextInt()) {
                                 System.out.println("Incorrect input. \nDoes the car has Music Player? \nPress 1 if " +
                                         "\"yes\"\nPress 2 if \"no\" ");
-                                sc.next();
+                                sc_2.next();
                             }
-                            int checkMusicPlayer = sc.nextInt();
+                            int checkMusicPlayer = sc_2.nextInt();
                             switch (checkMusicPlayer) {
                                 case 1:
                                     check3 = false;
@@ -356,7 +364,8 @@ public class WestminsterRentalVehicleManager implements RentalVehicleManager {
 
                         conn.datastore.save(car);
                         addCar(car);
-                        System.out.println("The car with the plate number " + car.getPlate() + " is added successfully");
+                        System.out.println("The car with the plate number " + car.getPlate() + " is added " +
+                                "successfully");
                         bigCheck = false;
                         break;
 
@@ -364,55 +373,73 @@ public class WestminsterRentalVehicleManager implements RentalVehicleManager {
                         System.out.println("Incorrect choice. Please try again...");
                 }
             }
+        } else{
+            System.out.println("The parking is full with 50 vehicles. \n Further vehicles cannot be added");
         }
     }
 
     @Override
     public void deleteVehicle() {
-//        vehicleArrayList = getListOfVehicles();
         Scanner sc2 = new Scanner(System.in);
         System.out.println("Enter the plate number of the vehicle: ");
         String toDelete = sc2.nextLine();
-        boolean checkIfExisted = false;
+        int sizeBeforeDelete = vehicleArrayList.size();
 
         for (Vehicle vehicle : vehicleArrayList) {
-            System.out.println(vehicleArrayList);
             if (vehicle.getPlate().equals(toDelete)) {
-                vehicleArrayList.remove(vehicle);
-                checkIfExisted = true;
+                removeVehicle(vehicle);
 
                 for (Document docVehicle : vehicleDocument()) {
 
                     if (docVehicle.getString("_id").equals(toDelete)) {
                         String type = docVehicle.getString("className");
 
+                        //to obtain the collection name of the vehicle with the number plate, in the database
                         String [] typeList = type.split("\\.");
-
                         String collectionName = typeList[typeList.length - 1];
 
-                        System.out.println(type + " " + conn.db.getCollection(type).find());
                         conn.db.getCollection(collectionName).deleteOne(new Document("_id", toDelete));
                         break;
                     }
-                    else {
-                        System.out.println("There is no vehicles with " + toDelete + " plate number in the " +
-                                "database");
-                    }
                 }
-            }
-
-            if (checkIfExisted) {
-                System.out.println("The vehicle is deleted successfully");
+                System.out.println("The vehicle with the number plate " + toDelete + " is successfully deleted");
                 break;
-            } else {
-                System.out.println("The vehicle is not in the database.");
             }
+        }
+
+        if(vehicleArrayList.size() == sizeBeforeDelete){
+            System.out.println("There are no vehicles with the number plate " + toDelete + " in the system.");
         }
     }
 
     @Override
     public void viewVehicles() {
+        if(vehicleArrayList.size() != 0) {
+            if(carArrayList.size() != 0){
+                System.out.println("The cars in the Vehicle Rental Management System");
+                System.out.println("Plate No\t\tMake of Car\t\tModel of Car");
+                for(Car car: carArrayList){
+                    System.out.println(car.getPlate() + "\t\t\t   " + car.getMake() + "\t\t\t\t  " + car.getModel());
+                }
+                System.out.println();
+            }else{
+                System.out.println("---------There are no cars in the vehicle rental management system---------");
+            }
 
+            if(bikeArrayList.size() != 0){
+                System.out.println("The bikes in the Vehicle Rental Management System\n");
+                System.out.println("Plate No\t\tMake of Bike\t\tModel of Bike");
+                for(Bike bike: bikeArrayList){
+                    System.out.println(bike.getPlate() + "\t\t\t   " + bike.getMake() + "\t\t\t\t  " + bike.getModel());
+                }
+                System.out.println();
+            }else{
+                System.out.println("\n---------There are no bike in the vehicle rental management system---------\n");
+            }
+        }else{
+            System.out.println("\n---------- There are no vehicles in the vehicle rental management system --------" +
+                    "--\n");
+        }
     }
 
     @Override
@@ -420,15 +447,13 @@ public class WestminsterRentalVehicleManager implements RentalVehicleManager {
 
     }
 
-//    public void begin() throws IOException {
-//        vehicleArrayList = getListOfVehicles();
-//        displayMenu();
-//    }
+    public void begin() throws IOException {
+        vehicleArrayList = getListOfVehicles();
+        displayMenu();
+    }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         WestminsterRentalVehicleManager manager = new WestminsterRentalVehicleManager();
-        manager.getListOfVehicles();
-        System.out.println(manager.vehicleArrayList);
-        manager.addVehicle();
+        manager.begin();
     }
 }
