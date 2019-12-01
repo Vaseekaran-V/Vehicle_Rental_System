@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<DialogPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.vehicleRentalGUI.controllers.LoginController"
+            prefHeight="400.0" prefWidth="600.0">
+    <headerText >
+        Login
+    </headerText>
+    <content>
+        <GridPane alignment="center" hgap="10" vgap="10">
+            <Label text="Username" GridPane.rowIndex="0" GridPane.columnIndex="0" prefWidth="90"/>
+            <TextField fx:id="usernameField" GridPane.rowIndex="0" GridPane.columnIndex="1" prefWidth="90" GridPane.columnSpan="2"/>
+
+            <Label text="Password" GridPane.rowIndex="1" GridPane.columnIndex="0" prefWidth="90"/>
+            <PasswordField fx:id="passwordField" GridPane.rowIndex="1" GridPane.columnIndex="1" prefWidth="90" GridPane.columnSpan="2"/>
+
+            <Button  text="Login"  onAction="#onLoginClicked" GridPane.rowIndex="2" GridPane.columnIndex="0" GridPane.columnSpan="5" prefWidth="90"/>
+            <Button  text="Cancel" onAction="#onCancelClicked" GridPane.rowIndex="2" GridPane.columnIndex="1" prefWidth="90"/>
+            <Button  text="Help"  GridPane.rowIndex="2" GridPane.columnIndex="2" prefWidth="90"/>
+
+        </GridPane>
+    </content>
+
+</DialogPane>

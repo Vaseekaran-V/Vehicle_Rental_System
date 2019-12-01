@@ -58,11 +58,7 @@ public abstract class Vehicle implements Comparable<Vehicle> {
 
     @Override
     public String toString() {
-        return "Vehicle{" +
-                "plate= '"+ plate + '\''+
-                "make='" + make + '\'' +
-                ", model='" + model + '\'' +
-                '}';
+        return make +" "+ model;
     }
 
     @Override
