@@ -1,8 +1,10 @@
 package com.OOP_CW;
 
+import java.io.FileWriter;
 import com.vehicleRentalGUI.*;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 import org.bson.Document;
@@ -16,37 +18,6 @@ public class WestminsterRentalVehicleManager implements RentalVehicleManager {
     private List <Vehicle> vehicleArrayList = new ArrayList<>();
     private ConnectDB conn = new ConnectDB();
 
-    public List<Car> getCarArrayList() {
-        return carArrayList;
-    }
-
-    public void setCarArrayList(List<Car> carArrayList) {
-        this.carArrayList = carArrayList;
-    }
-
-    public List<Document> getCarList() {
-        return carList;
-    }
-
-    public void setCarList(List<Document> carList) {
-        this.carList = carList;
-    }
-
-    public List<Bike> getBikeArrayList() {
-        return bikeArrayList;
-    }
-
-    public void setBikeArrayList(List<Bike> bikeArrayList) {
-        this.bikeArrayList = bikeArrayList;
-    }
-
-    public List<Document> getBikeList() {
-        return bikeList;
-    }
-
-    public void setBikeList(List<Document> bikeList) {
-        this.bikeList = bikeList;
-    }
 
     public List<Vehicle> getVehicleArrayList() {
         return vehicleArrayList;
@@ -223,6 +194,10 @@ public class WestminsterRentalVehicleManager implements RentalVehicleManager {
         getParkingSpace();
     }
 
+    /*public void inputString(){
+
+    }*/
+
     @Override
     public void addVehicle() {
         Scanner sc1 = new Scanner(System.in);
@@ -253,14 +228,15 @@ public class WestminsterRentalVehicleManager implements RentalVehicleManager {
 
             System.out.println("Enter the type of Vehicle: \n1. Bike. \n2.Car");
 
-            while (!sc1.hasNextInt()) {
-                System.out.println("Incorrect input.\n Choose an input from 1 to 6");
-                sc1.next();
-            }
-            int choiceVehicle = sc1.nextInt();
+
             boolean bigCheck = true;
             Scanner sc_2 = new Scanner(System.in);
             while (bigCheck) {
+                while (!sc1.hasNextInt()) {
+                    System.out.println("Incorrect input.\nChoose an input from 1 to 2");
+                    sc1.next();
+                }
+                int choiceVehicle = sc1.nextInt();
 
                 switch (choiceVehicle) {
                     case 1:
@@ -406,6 +382,7 @@ public class WestminsterRentalVehicleManager implements RentalVehicleManager {
                                 default:
                                     System.out.println("Incorrect choice. Try again");
                             }
+
                         }
 
                         conn.datastore.save(car);
@@ -416,8 +393,9 @@ public class WestminsterRentalVehicleManager implements RentalVehicleManager {
                         break;
 
                     default:
-                        System.out.println("Incorrect choice. Please try again...");
-                        break;
+
+                        System.out.println("Incorrect choice. Enter a number between 1 and 2");
+                        bigCheck = true;
                 }
             }
         } else{
@@ -505,12 +483,101 @@ public class WestminsterRentalVehicleManager implements RentalVehicleManager {
 
     @Override
     public void saveVehicle() {
+        try{
+            FileWriter vehiclesInLot = new FileWriter("Vehicles in Lot.txt");
+            PrintWriter printWriter = new PrintWriter(vehiclesInLot);
+
+            String leftAlignFormat = "|  %12s  | %13s  |  %13s  |%n";
+            printWriter.println("+----------------+----------------+-----------------+%n");
+            printWriter.println("|----------------|----VEHICLES----|-----------------|%n");
+            printWriter.println("|----------------|----------------|-----------------|%n");
+            printWriter.println("|                       CARS                        |%n");
+            printWriter.println("|----------------|----------------|-----------------|%n");
+            printWriter.println("|----------------|----------------|-----------------|%n");
+            printWriter.println("|  Plate Number  |      Make      |        Model    |%n");
+            printWriter.println("|----------------|----------------|-----------------|%n");
+            printWriter.println("|----------------|----------------|-----------------|%n");
+
+            for(Car car: carArrayList){
+                printWriter.printf(leftAlignFormat,car.getPlate(),car.getMake(),car.getModel());
+                printWriter.println("|----------------|----------------|-----------------|%n");
+            }
+            printWriter.println("|----------------|----------------|-----------------|%n");
+            printWriter.println("|----------------|----------------|-----------------|%n");
+            printWriter.println("|                      BIKES                        |%n");
+            printWriter.println("|----------------|----------------|-----------------|%n");
+            printWriter.println("|----------------|----------------|-----------------|%n");
+            printWriter.println("|  Plate Number  |      Make      |        Model    |%n");
+            printWriter.println("|----------------|----------------|-----------------|%n");
+            printWriter.println("|----------------|----------------|-----------------|%n");
+
+            for(Bike bike: bikeArrayList ){
+                printWriter.printf(leftAlignFormat,bike.getPlate(),bike.getMake(),bike.getModel());
+                printWriter.println("|----------------|----------------|-----------------|%n");
+            }
+
+            printWriter.println("+----------------|----------------|-----------------+%n");
+            printWriter.println("+----------------+----------------+-----------------+%n");
+
+            printWriter.flush();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
     }
 
     public void begin() throws IOException {
         getListOfVehicles();
         displayMenu();
+    }
+
+    public List<Car> getCarArrayList() {
+        return carArrayList;
+    }
+
+    public void setCarArrayList(List<Car> carArrayList) {
+        this.carArrayList = carArrayList;
+    }
+
+    public List<Document>  getCarList() {
+        return carList;
+    }
+
+    public void setCarList(List<Document> carList) {
+        this.carList = carList;
+    }
+
+    public List<Bike> getBikeArrayList() {
+        return bikeArrayList;
+    }
+
+    public void setBikeArrayList(List<Bike> bikeArrayList) {
+        this.bikeArrayList = bikeArrayList;
+    }
+
+    public List<Document> getBikeList() {
+        return bikeList;
+    }
+
+    public void setBikeList(List<Document> bikeList) {
+        this.bikeList = bikeList;
+    }
+
+    /*public List<Vehicle> getVehicleArrayList() {
+        return vehicleArrayList;
+    }
+
+    public void setVehicleArrayList(List<Vehicle> vehicleArrayList) {
+        this.vehicleArrayList = vehicleArrayList;
+    }*/
+
+    public List<String> getAddedPlates() {
+        return addedPlates;
+    }
+
+    public void setAddedPlates(List<String> addedPlates) {
+        this.addedPlates = addedPlates;
     }
 
     public static void main(String[] args) throws IOException {

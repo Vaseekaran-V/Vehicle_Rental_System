@@ -2,8 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="045914ba-c134-4f72-ab94-9dc14338cd0f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Vehicles in Lot.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/OOP_CW/WestminsterRentalVehicleManagerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/RentalManagementSystem.iml" beforeDir="false" afterPath="$PROJECT_DIR$/RentalManagementSystem.iml" afterDir="false" />
+=======
+
+      <change beforePath="$PROJECT_DIR$/RentalManagementSystem.iml" beforeDir="false" afterPath="$PROJECT_DIR$/RentalManagementSystem.iml" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/out/production/RentalManagementSystem/com/OOP_CW/Bike.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RentalManagementSystem/com/OOP_CW/Bike.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RentalManagementSystem/com/OOP_CW/Car.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RentalManagementSystem/com/OOP_CW/Car.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RentalManagementSystem/com/OOP_CW/Vehicle.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RentalManagementSystem/com/OOP_CW/Vehicle.class" afterDir="false" />
+>>>>>>> 234849e00eb9715707da141fc457142653405bf9
+>>>>>>> 37af3b77ebba5f333047f114ef1e2298ba1993bc
       <change beforePath="$PROJECT_DIR$/out/production/RentalManagementSystem/com/OOP_CW/WestminsterRentalVehicleManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RentalManagementSystem/com/OOP_CW/WestminsterRentalVehicleManager.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/OOP_CW/WestminsterRentalVehicleManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/OOP_CW/WestminsterRentalVehicleManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/vehicleRentalGUI/controllers/VehicleListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/vehicleRentalGUI/controllers/VehicleListController.java" afterDir="false" />
@@ -26,8 +38,14 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1UIQ0LH5Yx836Bltj3Xi500BNEU" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+<<<<<<< HEAD
+=======
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+>>>>>>> 37af3b77ebba5f333047f114ef1e2298ba1993bc
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
@@ -38,7 +56,11 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="create.test.in.the.same.root" value="true" />
+<<<<<<< HEAD
     <property name="last_opened_file_path" value="$USER_HOME$/Downloads/mockito-all-1.9.5.jar!/" />
+=======
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/dbunit-2.6.0.jar!/" />
+>>>>>>> 37af3b77ebba5f333047f114ef1e2298ba1993bc
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -48,6 +70,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="SDKs" />
+<<<<<<< HEAD
     <property name="project.structure.proportion" value="0.23875" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
@@ -60,6 +83,37 @@
     </key>
   </component>
   <component name="RunManager" selected="Application.WestminsterRentalVehicleManager">
+=======
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.OOP_CW" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+  </component>
+<<<<<<< HEAD
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.WestminsterRentalVehicleManager">
+=======
+  <component name="RunManager">
+>>>>>>> 234849e00eb9715707da141fc457142653405bf9
+>>>>>>> 37af3b77ebba5f333047f114ef1e2298ba1993bc
     <configuration name="WestminsterRentalVehicleManager" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.OOP_CW.WestminsterRentalVehicleManager" />
       <module name="RentalManagementSystem" />
@@ -73,7 +127,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+<<<<<<< HEAD
     <configuration name="WestminsterRentalVehicleManagerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+=======
+    <configuration name="WestminsterRentalVehicleManagerTest.checkParkingAvailable" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+>>>>>>> 37af3b77ebba5f333047f114ef1e2298ba1993bc
       <module name="RentalManagementSystem" />
       <extension name="coverage">
         <pattern>
@@ -83,6 +141,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.OOP_CW" />
       <option name="MAIN_CLASS_NAME" value="com.OOP_CW.WestminsterRentalVehicleManagerTest" />
+<<<<<<< HEAD
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -115,6 +174,9 @@
       <option name="PACKAGE_NAME" value="com.OOP_CW" />
       <option name="MAIN_CLASS_NAME" value="com.OOP_CW.WestminsterRentalVehicleManagerTest" />
       <option name="METHOD_NAME" value="deleteVehicle" />
+=======
+      <option name="METHOD_NAME" value="checkParkingAvailable" />
+>>>>>>> 37af3b77ebba5f333047f114ef1e2298ba1993bc
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -123,9 +185,13 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.WestminsterRentalVehicleManager" />
+<<<<<<< HEAD
         <item itemvalue="JUnit.WestminsterRentalVehicleManagerTest.addVehicle" />
         <item itemvalue="JUnit.WestminsterRentalVehicleManagerTest" />
         <item itemvalue="JUnit.WestminsterRentalVehicleManagerTest.deleteVehicle" />
+=======
+        <item itemvalue="JUnit.WestminsterRentalVehicleManagerTest.checkParkingAvailable" />
+>>>>>>> 37af3b77ebba5f333047f114ef1e2298ba1993bc
       </list>
     </recent_temporary>
   </component>
@@ -151,7 +217,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1575041405226</updated>
-      <workItem from="1575041406695" duration="64949000" />
+      <workItem from="1575041406695" duration="80003000" />
     </task>
     <task id="LOCAL-00001" summary="Added Delete and updated Add">
       <created>1575114094437</created>
@@ -174,7 +240,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575161079609</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Table view for vehicles in lot">
+      <created>1575183653073</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1575183653073</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -204,12 +277,14 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Added Delete and updated Add (2)" />
     <MESSAGE value="Added Delete and updated Add (3)" />
     <MESSAGE value="Added Delete and updated Add" />
     <MESSAGE value="Updated checking plate" />
     <MESSAGE value="Added Print Vehicle" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Print Vehicle" />
+    <MESSAGE value="Table view for vehicles in lot" />
+    <option name="LAST_COMMIT_MESSAGE" value="Table view for vehicles in lot" />
   </component>
   <component name="WindowStateProjectService">
     <state x="768" y="212" width="374" height="626" key="#com.intellij.ide.util.MemberChooser" timestamp="1575204846304">
