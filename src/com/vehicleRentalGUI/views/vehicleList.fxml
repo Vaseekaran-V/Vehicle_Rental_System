@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Font?>
+<BorderPane fx:id="mainBorderPane" xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.vehicleRentalGUI.controllers.VehicleListController"
+            prefHeight="400.0" prefWidth="600.0" >
+    <top>
+        <HBox alignment="TOP_RIGHT" spacing="10" style="-fx-padding: 10">
+            <Button text="Login"/>
+            <Button text="Signup"/>
+        </HBox>
+    </top>
+
+    <left>
+        <VBox spacing="10">
+            <padding>
+                <Insets right="5" left="5" top="5" bottom="5"/>
+            </padding>
+            <ComboBox fx:id="vehicleChoice" promptText="Select a Vehicle type" onMouseClicked="#listVehicleTypes" VBox.vgrow="ALWAYS">
+            </ComboBox>
+            <TextField promptText="Search Here"/>
+            <ListView fx:id="vehicleListView"  onMouseClicked="#handleClickListView"></ListView>
+        </VBox>
+
+    </left>
+
+    <center>
+        <VBox spacing="10" style="-fx-padding: 200%">
+            <Label text="Vehicle Details" prefHeight="50" lineSpacing="5" VBox.vgrow="ALWAYS">
+                <font>
+                    <Font name="Arial bold" size="20"/>
+                </font>
+                <padding>
+                    <Insets right="10" left="10" top="10" bottom="10"/>
+                </padding>
+            </Label>
+            <Label fx:id="vehicleDetailsLabel" prefHeight="330" textAlignment="JUSTIFY" alignment="TOP_LEFT">
+                <font>
+                    <Font name="Times New Roman" size="15"/>
+                </font>
+                <padding>
+                    <Insets right="10" left="10" top="10" bottom="10"/>
+                </padding>
+            </Label>
+            <HBox spacing="10" style="-fx-border-color: blue; -fx-padding: inherit" >
+                <DatePicker promptText="start date" />
+                <DatePicker promptText="end date"/>
+                <Button text="Check Availablity"/>
+                <Button fx:id="bookNow" text="Book now" onAction="#onBookNowClicked"/>
+            </HBox>
+        </VBox>
+    </center>
+
+</BorderPane>

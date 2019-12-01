@@ -1,5 +1,7 @@
 package com.OOP_CW;
 
+import com.vehicleRentalGUI.*;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,6 +15,15 @@ public class WestminsterRentalVehicleManager implements RentalVehicleManager {
     private List <Document> bikeList = new ArrayList<>();
     private List <Vehicle> vehicleArrayList = new ArrayList<>();
     private ConnectDB conn = new ConnectDB();
+
+    public List<Vehicle> getVehicleArrayList() {
+        return vehicleArrayList;
+    }
+
+    public void setVehicleArrayList(List<Vehicle> vehicleArrayList) {
+        this.vehicleArrayList = vehicleArrayList;
+    }
+
     private Scanner sc = new Scanner(System.in);
     private List <String> addedPlates = new ArrayList<>();
 
@@ -88,6 +99,9 @@ public class WestminsterRentalVehicleManager implements RentalVehicleManager {
                 case 5:
                     System.out.println("You have chosen to open the GUI");
                     //code to open the GUI
+                    String[] args = new String[0];
+                    Main.main(args);
+//                    Main.main(args);
                     break;
 
                 case 6:
@@ -100,6 +114,7 @@ public class WestminsterRentalVehicleManager implements RentalVehicleManager {
             }
         }
     }
+
 
     public void getListOfVehicles(){
         vehicleArrayList.clear();

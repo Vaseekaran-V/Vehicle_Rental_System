@@ -82,7 +82,7 @@ public class Car extends Vehicle{
 
     @Override
     public String toString() {
-        return "Car{} " + super.toString();
+        return super.toString();
     }
 
     @Override
