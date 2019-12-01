@@ -101,7 +101,7 @@ public class WestminsterRentalVehicleManager implements RentalVehicleManager {
         }
     }
 
-    public List <Vehicle> getListOfVehicles(){
+    public void getListOfVehicles(){
         vehicleArrayList.clear();
         conn.db.getCollection("Car").find().into(carList);
         conn.db.getCollection("Bike").find().into(bikeList);
@@ -139,7 +139,6 @@ public class WestminsterRentalVehicleManager implements RentalVehicleManager {
             System.out.println("There are no bikes added to the system.");
         }
 
-        return vehicleArrayList;
     }
 
     public boolean checkParkingAvailable(){
@@ -415,31 +414,45 @@ public class WestminsterRentalVehicleManager implements RentalVehicleManager {
     @Override
     public void viewVehicles() {
         if(vehicleArrayList.size() != 0) {
-            if(carArrayList.size() != 0){
-                System.out.println("The cars in the Vehicle Rental Management System");
-                System.out.println("Plate No\t\tMake of Car\t\tModel of Car");
-                for(Car car: carArrayList){
-                    System.out.println(car.getPlate() + "\t\t\t   " + car.getMake() + "\t\t\t\t  " + car.getModel());
-                }
-                System.out.println();
-            }else{
-                System.out.println("---------There are no cars in the vehicle rental management system---------");
-            }
-
-            if(bikeArrayList.size() != 0){
-                System.out.println("The bikes in the Vehicle Rental Management System\n");
-                System.out.println("Plate No\t\tMake of Bike\t\tModel of Bike");
-                for(Bike bike: bikeArrayList){
-                    System.out.println(bike.getPlate() + "\t\t\t   " + bike.getMake() + "\t\t\t\t  " + bike.getModel());
-                }
-                System.out.println();
-            }else{
-                System.out.println("\n---------There are no bike in the vehicle rental management system---------\n");
-            }
+            displayTable();
         }else{
-            System.out.println("\n---------- There are no vehicles in the vehicle rental management system --------" +
-                    "--\n");
+            System.out.println(" ********* There are no vehicles added to the system ********* ");
         }
+    }
+
+    public void displayTable(){
+        String leftAlignFormat = "|  %12s  | %13s  |  %13s  |%n";
+        System.out.format("+----------------+----------------+-----------------+%n");
+        System.out.format("|----------------|----VEHICLES----|-----------------|%n");
+        System.out.format("|----------------|----------------|-----------------|%n");
+        System.out.format("|                       CARS                        |%n");
+        System.out.format("|----------------|----------------|-----------------|%n");
+        System.out.format("|----------------|----------------|-----------------|%n");
+        System.out.format("|  Plate Number  |      Make      |        Model    |%n");
+        System.out.format("|----------------|----------------|-----------------|%n");
+        System.out.format("|----------------|----------------|-----------------|%n");
+
+        for(Car car: carArrayList){
+            System.out.format(leftAlignFormat,car.getPlate(),car.getMake(),car.getModel());
+            System.out.format("|----------------|----------------|-----------------|%n");
+        }
+        System.out.format("|----------------|----------------|-----------------|%n");
+        System.out.format("|----------------|----------------|-----------------|%n");
+        System.out.format("|                      BIKES                        |%n");
+        System.out.format("|----------------|----------------|-----------------|%n");
+        System.out.format("|----------------|----------------|-----------------|%n");
+        System.out.format("|  Plate Number  |      Make      |        Model    |%n");
+        System.out.format("|----------------|----------------|-----------------|%n");
+        System.out.format("|----------------|----------------|-----------------|%n");
+
+        for(Bike bike: bikeArrayList ){
+            System.out.format(leftAlignFormat,bike.getPlate(),bike.getMake(),bike.getModel());
+            System.out.format("|----------------|----------------|-----------------|%n");
+        }
+
+        System.out.format("+----------------|----------------|-----------------+%n");
+        System.out.format("+----------------+----------------+-----------------+%n");
+
     }
 
     @Override
@@ -448,7 +461,7 @@ public class WestminsterRentalVehicleManager implements RentalVehicleManager {
     }
 
     public void begin() throws IOException {
-        vehicleArrayList = getListOfVehicles();
+        getListOfVehicles();
         displayMenu();
     }
 
