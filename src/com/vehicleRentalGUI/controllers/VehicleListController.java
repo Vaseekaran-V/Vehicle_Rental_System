@@ -46,14 +46,14 @@ public class VehicleListController {
 
     @FXML
     public void handleClickListView(){
-//        Car vehicle = (Car) vehicleListView.getSelectionModel().getSelectedItems();
+        Car vehicle = (Car) vehicleListView.getSelectionModel().getSelectedItems();
         System.out.println(vehicleListView.getSelectionModel().getSelectedItems().getClass());
 //        itemDetailsTextArea.setText(item.getDescription());
-//        StringBuilder sb = new StringBuilder("Make\t : \t"+vehicle.getMake());
-//        sb.append("\n\n");
-//        sb.append("Model\t : \t"+vehicle.getModel());
-//        sb.append("\n\nPlate\t : \t"+vehicle.getPlate());
-//        vehicleDetailsLabel.setText(sb.toString());
+        StringBuilder sb = new StringBuilder("Make\t : \t"+vehicle.getMake());
+        sb.append("\n\n");
+        sb.append("Model\t : \t"+vehicle.getModel());
+        sb.append("\n\nPlate\t : \t"+vehicle.getPlate());
+        vehicleDetailsLabel.setText(sb.toString());
     }
 
     @FXML

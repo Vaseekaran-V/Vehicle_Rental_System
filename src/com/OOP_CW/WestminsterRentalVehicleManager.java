@@ -16,6 +16,38 @@ public class WestminsterRentalVehicleManager implements RentalVehicleManager {
     private List <Vehicle> vehicleArrayList = new ArrayList<>();
     private ConnectDB conn = new ConnectDB();
 
+    public List<Car> getCarArrayList() {
+        return carArrayList;
+    }
+
+    public void setCarArrayList(List<Car> carArrayList) {
+        this.carArrayList = carArrayList;
+    }
+
+    public List<Document> getCarList() {
+        return carList;
+    }
+
+    public void setCarList(List<Document> carList) {
+        this.carList = carList;
+    }
+
+    public List<Bike> getBikeArrayList() {
+        return bikeArrayList;
+    }
+
+    public void setBikeArrayList(List<Bike> bikeArrayList) {
+        this.bikeArrayList = bikeArrayList;
+    }
+
+    public List<Document> getBikeList() {
+        return bikeList;
+    }
+
+    public void setBikeList(List<Document> bikeList) {
+        this.bikeList = bikeList;
+    }
+
     public List<Vehicle> getVehicleArrayList() {
         return vehicleArrayList;
     }
@@ -385,6 +417,7 @@ public class WestminsterRentalVehicleManager implements RentalVehicleManager {
 
                     default:
                         System.out.println("Incorrect choice. Please try again...");
+                        break;
                 }
             }
         } else{
