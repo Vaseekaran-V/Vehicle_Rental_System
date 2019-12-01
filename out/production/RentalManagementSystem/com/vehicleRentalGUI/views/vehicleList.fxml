@@ -24,10 +24,10 @@
             <padding>
                 <Insets right="5" left="5" top="5" bottom="5"/>
             </padding>
-            <ComboBox fx:id="vehicleChoice" promptText="Select a Vehicle type" onMouseClicked="#listVehicleTypes" VBox.vgrow="ALWAYS">
+            <ComboBox fx:id="vehicleChoice" promptText="Select a Vehicle type" onMouseClicked="#listVehicleTypes" onAction="#handleClickVehicleChoice" VBox.vgrow="ALWAYS">
             </ComboBox>
             <TextField promptText="Search Here"/>
-            <ListView fx:id="vehicleListView"  onMouseClicked="#handleClickListView"></ListView>
+            <ListView fx:id="vehicleListView"  onMouseClicked="#handleClickListView" ></ListView>
         </VBox>
 
     </left>

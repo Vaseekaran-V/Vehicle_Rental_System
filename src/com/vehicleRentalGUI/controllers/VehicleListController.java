@@ -42,6 +42,7 @@ public class VehicleListController {
         vehicleTypes.add("Bike");
         vehicleTypes.add("Car");
         vehicleChoice.getItems().setAll(vehicleTypes);
+
     }
 
     @FXML
@@ -69,5 +70,15 @@ public class VehicleListController {
             System.out.println("Could not load Login");
         }
 
+    }
+
+    @FXML
+    public void handleClickVehicleChoice(){
+        System.out.println(vehicleChoice.getSelectionModel().getSelectedItem());
+        if(vehicleChoice.getSelectionModel().getSelectedItem().equals("Bike")){
+            vehicleListView.getItems().setAll(vehicleManager.getBikeArrayList());
+        }else if(vehicleChoice.getSelectionModel().getSelectedItem().equals("Car")){
+            vehicleListView.getItems().setAll(vehicleManager.getCarArrayList());
+        }
     }
 }

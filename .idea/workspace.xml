@@ -2,17 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="045914ba-c134-4f72-ab94-9dc14338cd0f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Vehicles in Lot.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/OOP_CW/WestminsterRentalVehicleManagerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-
-      <change beforePath="$PROJECT_DIR$/RentalManagementSystem.iml" beforeDir="false" afterPath="$PROJECT_DIR$/RentalManagementSystem.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RentalManagementSystem/com/OOP_CW/Bike.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RentalManagementSystem/com/OOP_CW/Bike.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RentalManagementSystem/com/OOP_CW/Car.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RentalManagementSystem/com/OOP_CW/Car.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RentalManagementSystem/com/OOP_CW/Vehicle.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RentalManagementSystem/com/OOP_CW/Vehicle.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RentalManagementSystem/com/OOP_CW/WestminsterRentalVehicleManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RentalManagementSystem/com/OOP_CW/WestminsterRentalVehicleManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/OOP_CW/WestminsterRentalVehicleManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/OOP_CW/WestminsterRentalVehicleManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/vehicleRentalGUI/controllers/VehicleListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/vehicleRentalGUI/controllers/VehicleListController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/vehicleRentalGUI/views/vehicleList.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/vehicleRentalGUI/views/vehicleList.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,31 +59,6 @@
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
-  </component>
-  <component name="RunManager" selected="Application.WestminsterRentalVehicleManager">
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
-  </component>
-  <component name="RecentsManager">
-    <key name="CreateTestDialog.RecentsKey">
-      <recent name="com.OOP_CW" />
-    </key>
-    <key name="CreateTestDialog.Recents.Supers">
-      <recent name="" />
-    </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager" selected="Application.WestminsterRentalVehicleManager">
     <configuration name="WestminsterRentalVehicleManager" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -263,22 +230,22 @@
       <screen x="0" y="27" width="1920" height="998" />
     </state>
     <state x="738" y="282" width="424" height="484" key="FileChooserDialogImpl/0.27.1920.998@0.27.1920.998" timestamp="1575201633961" />
-    <state width="1874" height="290" key="GridCell.Tab.0.bottom" timestamp="1575238147877">
+    <state width="1874" height="290" key="GridCell.Tab.0.bottom" timestamp="1575242901224">
       <screen x="0" y="27" width="1920" height="998" />
     </state>
-    <state width="1874" height="290" key="GridCell.Tab.0.bottom/0.27.1920.998@0.27.1920.998" timestamp="1575238147877" />
-    <state width="1874" height="290" key="GridCell.Tab.0.center" timestamp="1575238147876">
+    <state width="1874" height="290" key="GridCell.Tab.0.bottom/0.27.1920.998@0.27.1920.998" timestamp="1575242901224" />
+    <state width="1874" height="290" key="GridCell.Tab.0.center" timestamp="1575242901224">
       <screen x="0" y="27" width="1920" height="998" />
     </state>
-    <state width="1874" height="290" key="GridCell.Tab.0.center/0.27.1920.998@0.27.1920.998" timestamp="1575238147876" />
-    <state width="1874" height="290" key="GridCell.Tab.0.left" timestamp="1575238147876">
+    <state width="1874" height="290" key="GridCell.Tab.0.center/0.27.1920.998@0.27.1920.998" timestamp="1575242901224" />
+    <state width="1874" height="290" key="GridCell.Tab.0.left" timestamp="1575242901224">
       <screen x="0" y="27" width="1920" height="998" />
     </state>
-    <state width="1874" height="290" key="GridCell.Tab.0.left/0.27.1920.998@0.27.1920.998" timestamp="1575238147876" />
-    <state width="1874" height="290" key="GridCell.Tab.0.right" timestamp="1575238147877">
+    <state width="1874" height="290" key="GridCell.Tab.0.left/0.27.1920.998@0.27.1920.998" timestamp="1575242901224" />
+    <state width="1874" height="290" key="GridCell.Tab.0.right" timestamp="1575242901224">
       <screen x="0" y="27" width="1920" height="998" />
     </state>
-    <state width="1874" height="290" key="GridCell.Tab.0.right/0.27.1920.998@0.27.1920.998" timestamp="1575238147877" />
+    <state width="1874" height="290" key="GridCell.Tab.0.right/0.27.1920.998@0.27.1920.998" timestamp="1575242901224" />
     <state x="443" y="102" width="1024" height="845" key="SettingsEditor" timestamp="1575201636682">
       <screen x="0" y="27" width="1920" height="998" />
     </state>
