@@ -11,7 +11,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("views/vehicleList.fxml"));
-        primaryStage.setTitle("Hello World");
+        primaryStage.setTitle("Vehicle Rental System");
         primaryStage.setScene(new Scene(root, 1000, 500));
         primaryStage.show();
     }

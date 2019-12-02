@@ -18,6 +18,7 @@ public class WestminsterRentalVehicleManager implements RentalVehicleManager {
     private List <Vehicle> vehicleArrayList = new ArrayList<>();
     private ConnectDB conn = new ConnectDB();
 
+
     public List<Vehicle> getVehicleArrayList() {
         return vehicleArrayList;
     }
@@ -392,9 +393,9 @@ public class WestminsterRentalVehicleManager implements RentalVehicleManager {
                         break;
 
                     default:
+
                         System.out.println("Incorrect choice. Enter a number between 1 and 2");
                         bigCheck = true;
-
                 }
             }
         } else{
@@ -563,7 +564,10 @@ public class WestminsterRentalVehicleManager implements RentalVehicleManager {
         this.bikeList = bikeList;
     }
 
-    /*public List<Vehicle> getVehicleArrayList() {
+    public ConnectDB getConn() {
+        return conn;
+    }
+/*public List<Vehicle> getVehicleArrayList() {
         return vehicleArrayList;
     }
 
