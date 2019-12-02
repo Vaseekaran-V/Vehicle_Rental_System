@@ -1,4 +1,4 @@
-package com.OOP_CW;
+package com.vehicleRentalGUI.controllers;
 
 import com.github.jmkgreen.morphia.Datastore;
 import com.github.jmkgreen.morphia.Morphia;
@@ -10,5 +10,6 @@ public class ConnectDB {
     MongoDatabase db = vehiclesDatabase.getDatabase("RentVehicleDB");
     Morphia morphia = new Morphia();
     Datastore datastore = morphia.createDatastore(vehiclesDatabase, "RentVehicleDB");
+
 
 }

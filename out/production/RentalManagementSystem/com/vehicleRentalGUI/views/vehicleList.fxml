@@ -14,8 +14,8 @@
             prefHeight="400.0" prefWidth="600.0" >
     <top>
         <HBox alignment="TOP_RIGHT" spacing="10" style="-fx-padding: 10">
-            <Button text="Login"/>
-            <Button text="Signup"/>
+            <Button text="Login" onAction="#onLoginClicked"/>
+            <Button text="Signup" onAction="#onSignupClicked"/>
         </HBox>
     </top>
 

@@ -8,6 +8,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 
@@ -47,13 +48,13 @@ public class VehicleListController {
 
     @FXML
     public void handleClickListView(){
-        Car vehicle = (Car) vehicleListView.getSelectionModel().getSelectedItems();
-        System.out.println(vehicleListView.getSelectionModel().getSelectedItems().getClass());
-//        itemDetailsTextArea.setText(item.getDescription());
+        Vehicle vehicle = vehicleListView.getSelectionModel().getSelectedItem();
+        System.out.println(vehicleListView.getSelectionModel().getSelectedItem());
+////        itemDetailsTextArea.setText(item.getDescription());
         StringBuilder sb = new StringBuilder("Make\t : \t"+vehicle.getMake());
         sb.append("\n\n");
         sb.append("Model\t : \t"+vehicle.getModel());
-        sb.append("\n\nPlate\t : \t"+vehicle.getPlate());
+        sb.append("\n\nPlate\t\t : \t"+vehicle.getPlate());
         vehicleDetailsLabel.setText(sb.toString());
     }
 
@@ -64,8 +65,11 @@ public class VehicleListController {
             Stage stage = new Stage();
             stage.setTitle("Login");
             stage.setScene(new Scene(root, 500, 275));
-            stage.show();
-            ((Node)(event.getSource())).getScene().getWindow().hide();
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.showAndWait();
+
+//            stage.show();
+//            ((Node)(event.getSource())).getScene().getWindow().hide();
         }catch (IOException e){
             System.out.println("Could not load Login");
         }
@@ -79,6 +83,34 @@ public class VehicleListController {
             vehicleListView.getItems().setAll(vehicleManager.getBikeArrayList());
         }else if(vehicleChoice.getSelectionModel().getSelectedItem().equals("Car")){
             vehicleListView.getItems().setAll(vehicleManager.getCarArrayList());
+        }
+    }
+
+    @FXML
+    public void onSignupClicked(){
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("../views/signup.fxml"));
+            Stage stage = new Stage();
+            stage.setTitle("Sigup");
+            stage.setScene(new Scene(root, 500, 275));
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.showAndWait();
+        }catch (IOException e){
+            System.out.println("Could not load Signup");
+        }
+    }
+
+    @FXML
+    public void onLoginClicked(){
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("../views/login.fxml"));
+            Stage stage = new Stage();
+            stage.setTitle("Login");
+            stage.setScene(new Scene(root, 500, 275));
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.showAndWait();
+        }catch (IOException e){
+            System.out.println("Could not load Login");
         }
     }
 }

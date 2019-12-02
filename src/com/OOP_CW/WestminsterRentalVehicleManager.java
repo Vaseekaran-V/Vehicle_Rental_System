@@ -564,7 +564,10 @@ public class WestminsterRentalVehicleManager implements RentalVehicleManager {
         this.bikeList = bikeList;
     }
 
-    /*public List<Vehicle> getVehicleArrayList() {
+    public ConnectDB getConn() {
+        return conn;
+    }
+/*public List<Vehicle> getVehicleArrayList() {
         return vehicleArrayList;
     }
 
