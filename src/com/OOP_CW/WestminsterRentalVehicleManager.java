@@ -5,30 +5,21 @@ import com.vehicleRentalGUI.*;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
+
 import org.bson.Document;
-import java.util.Scanner;
 
 public class WestminsterRentalVehicleManager implements RentalVehicleManager {
-    private List <Car> carArrayList = new ArrayList<>();
-    private List <Document> carList = new ArrayList<>();
-    private List <Bike> bikeArrayList = new ArrayList<>();
-    private List <Document> bikeList = new ArrayList<>();
-    private List <Vehicle> vehicleArrayList = new ArrayList<>();
-    private ConnectDB conn = new ConnectDB();
 
-    public List<Vehicle> getVehicleArrayList() {
-        return vehicleArrayList;
-    }
+    private List <Car> carArrayList = new ArrayList<>(); //array list to hold car objects
+    private List <Document> carList = new ArrayList<>(); //array list to hold the documents from the collection Car (in database)
+    private List <Bike> bikeArrayList = new ArrayList<>(); //array list to hold the bike objects
+    private List <Document> bikeList = new ArrayList<>(); //array list to hold the documents from the collection Bike (in database)
+    private List <Vehicle> vehicleArrayList = new ArrayList<>(); //array list to hold the vehicle objects
+    private ConnectDB conn = new ConnectDB(); //an object to connect to the database from the ConnectDB class
+    private List <String> addedPlates = new ArrayList<>(); //array list to hold the plates
 
-    public void setVehicleArrayList(List<Vehicle> vehicleArrayList) {
-        this.vehicleArrayList = vehicleArrayList;
-    }
-
-    private Scanner sc = new Scanner(System.in);
-    private List <String> addedPlates = new ArrayList<>();
-
+    //list of all the documents directly from the database
     public List<Document> vehicleDocument(){
         conn.db.getCollection("Car").find().into(carList);
         conn.db.getCollection("Bike").find().into(bikeList);
@@ -40,7 +31,7 @@ public class WestminsterRentalVehicleManager implements RentalVehicleManager {
         return vehicleDocuments;
     }
 
-    //get all the plates of te vehicles in the database
+    //get all the plates of the vehicles in the database
     public List <String> getPlates(){
         addedPlates.clear();
         for(Vehicle vehicle: vehicleArrayList){
@@ -66,12 +57,13 @@ public class WestminsterRentalVehicleManager implements RentalVehicleManager {
         Scanner menuChoice = new Scanner(System.in);
 
         while (true){
-            System.out.println("<----------MENU---------->");
-            System.out.println("1. Add a Vehicle. \n2. View all vehicles. \n3. Delete Vehicle. \n4. Save Vehicle. \n" +
-                    "5. Open GUI. \n6. Exit Program");
-            System.out.println("**** ENTER THE NUMBER OF YOUR CHOICE ****");
+            System.out.println("\n+-----WELCOME TO THE WESTMINSTER VEHICLE RENTAL MANAGER-----+");
+            System.out.println("\n\t\t<----------MENU - MANAGER CONSOLE---------->\n");
+            System.out.println("\t\t\t1. Add a Vehicle. \n\t\t\t2. View all vehicles. \n\t\t\t3. Delete Vehicle. \n\t" +
+                    "\t\t4. Save Vehicle. \n\t\t\t5. Open GUI. \n\t\t\t6. Exit Program");
+            System.out.println("\n\t\t**** ENTER YOUR CHOICE ****");
             while (!menuChoice.hasNextInt()) {
-                System.out.println("Incorrect input.\n Choose an input from 1 to 6");
+                System.out.println("\t\t\tIncorrect input.\n\t\t\tChoose an input from 1 to 6");
                 menuChoice.next();
 
             }
@@ -103,7 +95,6 @@ public class WestminsterRentalVehicleManager implements RentalVehicleManager {
                     //code to open the GUI
                     String[] args = new String[0];
                     Main.main(args);
-//                    Main.main(args);
                     break;
 
                 case 6:
@@ -117,7 +108,7 @@ public class WestminsterRentalVehicleManager implements RentalVehicleManager {
         }
     }
 
-
+    //add the vehicles in the database to the corresponding lists
     public void getListOfVehicles(){
         vehicleArrayList.clear();
         conn.db.getCollection("Car").find().into(carList);
@@ -158,6 +149,7 @@ public class WestminsterRentalVehicleManager implements RentalVehicleManager {
 
     }
 
+    //check if there is available space in the system and return boolean
     public boolean checkParkingAvailable(){
         int vehiclesInParking = vehicleArrayList.size();
 
@@ -172,16 +164,19 @@ public class WestminsterRentalVehicleManager implements RentalVehicleManager {
     public WestminsterRentalVehicleManager() {
     }
 
+    //add a car to the corresponding lists
     public void addCar(Car car){
         vehicleArrayList.add(car);
         carArrayList.add(car);
     }
 
+    //add a bike to the corresponding lists
     public void addBike(Bike bike){
         vehicleArrayList.add(bike);
         bikeArrayList.add(bike);
     }
 
+    //remove vehicle from the the corresponding lists
     public void removeVehicle(Vehicle vehicle){
         vehicleArrayList.remove(vehicle);
         carArrayList.remove(vehicle);
@@ -193,14 +188,94 @@ public class WestminsterRentalVehicleManager implements RentalVehicleManager {
         getParkingSpace();
     }
 
-    /*public void inputString(){
+    //sort cars list with respect to make
+    public List<Car> sortCarList(){
+        List <String> makeCarList = new ArrayList<>();
 
-    }*/
+        for(Car car: carArrayList){
+            String make = car.getMake();
+            makeCarList.add(make);
+        }
 
+        makeCarList.sort(String.CASE_INSENSITIVE_ORDER);
+
+        List<Car> sortedCarList = new ArrayList<>();
+        for(String make: makeCarList){
+            for(Car car: carArrayList){
+                if(make.equals(car.getMake())){
+                    sortedCarList.add(car);
+                }
+            }
+        }
+
+        return sortedCarList;
+    }
+
+    //sorting the bike list with respect to its make
+    public List <Bike> sortBikeList(){
+        List <String> makeBikeList = new ArrayList<>();
+
+        for(Bike bike: bikeArrayList){
+            String make = bike.getMake();
+            makeBikeList.add(make);
+        }
+
+        makeBikeList.sort(String.CASE_INSENSITIVE_ORDER);
+
+        List<Bike> sortedBikeList = new ArrayList<>();
+        for(String make: makeBikeList){
+            for(Bike bike: bikeArrayList){
+                if(make.equals(bike.getMake())){
+                    sortedBikeList.add(bike);
+                }
+            }
+        }
+        return sortedBikeList;
+    }
+
+    //display the vehicles in the system in a table format
+    public void displayTable(){
+        //carArrayList = sortCarList();
+        String leftAlignFormat = "|  %12s  | %13s  |  %13s  |%n";
+        System.out.format("+----------------+----------------+-----------------+%n");
+        System.out.format("|----------------|----VEHICLES----|-----------------|%n");
+        System.out.format("|----------------|----------------|-----------------|%n");
+        System.out.format("|                       CARS                        |%n");
+        System.out.format("|----------------|----------------|-----------------|%n");
+        System.out.format("|----------------|----------------|-----------------|%n");
+        System.out.format("|  Plate Number  |      Make      |        Model    |%n");
+        System.out.format("|----------------|----------------|-----------------|%n");
+        System.out.format("|----------------|----------------|-----------------|%n");
+
+        for(Car car: sortCarList()){
+            System.out.format(leftAlignFormat,car.getPlate(),car.getMake(),car.getModel());
+            System.out.format("|----------------|----------------|-----------------|%n");
+        }
+        System.out.format("|----------------|----------------|-----------------|%n");
+        System.out.format("|----------------|----------------|-----------------|%n");
+        System.out.format("|                      BIKES                        |%n");
+        System.out.format("|----------------|----------------|-----------------|%n");
+        System.out.format("|----------------|----------------|-----------------|%n");
+        System.out.format("|  Plate Number  |      Make      |        Model    |%n");
+        System.out.format("|----------------|----------------|-----------------|%n");
+        System.out.format("|----------------|----------------|-----------------|%n");
+
+        for(Bike bike: sortBikeList()){
+            System.out.format(leftAlignFormat,bike.getPlate(),bike.getMake(),bike.getModel());
+            System.out.format("|----------------|----------------|-----------------|%n");
+        }
+
+        System.out.format("+----------------|----------------|-----------------+%n");
+        System.out.format("+----------------+----------------+-----------------+%n");
+
+    }
+
+    //adding a vehicle to the system
     @Override
     public void addVehicle() {
         Scanner sc1 = new Scanner(System.in);
 
+        //checks if there is space to add a vehicle
         if(checkParkingAvailable()) {
             getParkingSpace();
 
@@ -402,10 +477,22 @@ public class WestminsterRentalVehicleManager implements RentalVehicleManager {
         }
     }
 
+    //deleting a selected vehicle, with respect to their plate
     @Override
     public void deleteVehicle() {
+        //code to display the cars/bikes in the system
+        System.out.println("\nCars in the system\n");
+        for(Car car: carArrayList){
+            System.out.println("Plate ----- > "+ car.getPlate() + " | Make -----> " + car.getMake());
+        }
+
+        System.out.println("\nBikes in the system\n");
+        for(Bike bike: bikeArrayList){
+            System.out.println("Plate -----> " + bike.getPlate() + " | Make -----> " + bike.getMake());
+        }
+
         Scanner sc2 = new Scanner(System.in);
-        System.out.println("Enter the plate number of the vehicle: ");
+        System.out.println("\nEnter the plate number of the vehicle: ");
         String toDelete = sc2.nextLine();
         int sizeBeforeDelete = vehicleArrayList.size();
 
@@ -436,8 +523,11 @@ public class WestminsterRentalVehicleManager implements RentalVehicleManager {
         }
     }
 
+    //displaying the vehicles that are available in the console
     @Override
     public void viewVehicles() {
+        sortCarList();
+
         if(vehicleArrayList.size() != 0) {
             displayTable();
         }else{
@@ -445,46 +535,19 @@ public class WestminsterRentalVehicleManager implements RentalVehicleManager {
         }
     }
 
-    public void displayTable(){
-        String leftAlignFormat = "|  %12s  | %13s  |  %13s  |%n";
-        System.out.format("+----------------+----------------+-----------------+%n");
-        System.out.format("|----------------|----VEHICLES----|-----------------|%n");
-        System.out.format("|----------------|----------------|-----------------|%n");
-        System.out.format("|                       CARS                        |%n");
-        System.out.format("|----------------|----------------|-----------------|%n");
-        System.out.format("|----------------|----------------|-----------------|%n");
-        System.out.format("|  Plate Number  |      Make      |        Model    |%n");
-        System.out.format("|----------------|----------------|-----------------|%n");
-        System.out.format("|----------------|----------------|-----------------|%n");
-
-        for(Car car: carArrayList){
-            System.out.format(leftAlignFormat,car.getPlate(),car.getMake(),car.getModel());
-            System.out.format("|----------------|----------------|-----------------|%n");
-        }
-        System.out.format("|----------------|----------------|-----------------|%n");
-        System.out.format("|----------------|----------------|-----------------|%n");
-        System.out.format("|                      BIKES                        |%n");
-        System.out.format("|----------------|----------------|-----------------|%n");
-        System.out.format("|----------------|----------------|-----------------|%n");
-        System.out.format("|  Plate Number  |      Make      |        Model    |%n");
-        System.out.format("|----------------|----------------|-----------------|%n");
-        System.out.format("|----------------|----------------|-----------------|%n");
-
-        for(Bike bike: bikeArrayList ){
-            System.out.format(leftAlignFormat,bike.getPlate(),bike.getMake(),bike.getModel());
-            System.out.format("|----------------|----------------|-----------------|%n");
-        }
-
-        System.out.format("+----------------|----------------|-----------------+%n");
-        System.out.format("+----------------+----------------+-----------------+%n");
-
-    }
-
+    //save the database as a text file, if any changes are made
     @Override
     public void saveVehicle() {
         try{
+            GregorianCalendar updateDate = new GregorianCalendar();
+            int dayUpdate = updateDate.get(Calendar.DATE);
+            int monthUpdate = updateDate.get(Calendar.MONTH);
+            int yearUpdate = updateDate.get(Calendar.YEAR);
+
+
             FileWriter vehiclesInLot = new FileWriter("Vehicles in Lot.txt");
             PrintWriter printWriter = new PrintWriter(vehiclesInLot);
+
 
             String leftAlignFormat = "|  %12s  | %13s  |  %13s  |%n";
             printWriter.println("+----------------+----------------+-----------------+%n");
@@ -497,7 +560,7 @@ public class WestminsterRentalVehicleManager implements RentalVehicleManager {
             printWriter.println("|----------------|----------------|-----------------|%n");
             printWriter.println("|----------------|----------------|-----------------|%n");
 
-            for(Car car: carArrayList){
+            for(Car car: sortCarList()){
                 printWriter.printf(leftAlignFormat,car.getPlate(),car.getMake(),car.getModel());
                 printWriter.println("|----------------|----------------|-----------------|%n");
             }
@@ -510,15 +573,20 @@ public class WestminsterRentalVehicleManager implements RentalVehicleManager {
             printWriter.println("|----------------|----------------|-----------------|%n");
             printWriter.println("|----------------|----------------|-----------------|%n");
 
-            for(Bike bike: bikeArrayList ){
+            for(Bike bike: sortBikeList() ){
                 printWriter.printf(leftAlignFormat,bike.getPlate(),bike.getMake(),bike.getModel());
                 printWriter.println("|----------------|----------------|-----------------|%n");
             }
 
             printWriter.println("+----------------|----------------|-----------------+%n");
             printWriter.println("+----------------+----------------+-----------------+%n");
+            printWriter.println("DATE UPDATED:  " + dayUpdate + " / "+ monthUpdate + " / " + yearUpdate);
+            printWriter.println("TIME UPDATED: " + java.time.LocalTime.now());
+
 
             printWriter.flush();
+
+            System.out.println("The file is updated and saved successfully");
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -526,9 +594,13 @@ public class WestminsterRentalVehicleManager implements RentalVehicleManager {
 
     }
 
-    public void begin() throws IOException {
-        getListOfVehicles();
-        displayMenu();
+    //Getters and setters for the variables of WestminsterRentalVehicleManager class
+    public List<Vehicle> getVehicleArrayList() {
+        return vehicleArrayList;
+    }
+
+    public void setVehicleArrayList(List<Vehicle> vehicleArrayList) {
+        this.vehicleArrayList = vehicleArrayList;
     }
 
     public List<Car> getCarArrayList() {
@@ -563,14 +635,6 @@ public class WestminsterRentalVehicleManager implements RentalVehicleManager {
         this.bikeList = bikeList;
     }
 
-    /*public List<Vehicle> getVehicleArrayList() {
-        return vehicleArrayList;
-    }
-
-    public void setVehicleArrayList(List<Vehicle> vehicleArrayList) {
-        this.vehicleArrayList = vehicleArrayList;
-    }*/
-
     public List<String> getAddedPlates() {
         return addedPlates;
     }
@@ -579,6 +643,13 @@ public class WestminsterRentalVehicleManager implements RentalVehicleManager {
         this.addedPlates = addedPlates;
     }
 
+    //function to initiate the vehicle list and to display the menu
+    public void begin() throws IOException {
+        getListOfVehicles();
+        displayMenu();
+    }
+
+    //main method
     public static void main(String[] args) throws IOException {
         WestminsterRentalVehicleManager manager = new WestminsterRentalVehicleManager();
         manager.begin();

@@ -2,20 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="045914ba-c134-4f72-ab94-9dc14338cd0f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Vehicles in Lot.txt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/com/OOP_CW/WestminsterRentalVehicleManagerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-
       <change beforePath="$PROJECT_DIR$/RentalManagementSystem.iml" beforeDir="false" afterPath="$PROJECT_DIR$/RentalManagementSystem.iml" afterDir="false" />
-=======
-      <change beforePath="$PROJECT_DIR$/out/production/RentalManagementSystem/com/OOP_CW/Bike.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RentalManagementSystem/com/OOP_CW/Bike.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RentalManagementSystem/com/OOP_CW/Car.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RentalManagementSystem/com/OOP_CW/Car.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RentalManagementSystem/com/OOP_CW/Vehicle.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RentalManagementSystem/com/OOP_CW/Vehicle.class" afterDir="false" />
->>>>>>> 234849e00eb9715707da141fc457142653405bf9
+      <change beforePath="$PROJECT_DIR$/Vehicles in Lot.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Vehicles in Lot.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/RentalManagementSystem/com/OOP_CW/WestminsterRentalVehicleManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RentalManagementSystem/com/OOP_CW/WestminsterRentalVehicleManager.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/OOP_CW/Bike.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/OOP_CW/Bike.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/OOP_CW/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/OOP_CW/Car.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/OOP_CW/Vehicle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/OOP_CW/Vehicle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/OOP_CW/ConnectDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/OOP_CW/ConnectDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/OOP_CW/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/OOP_CW/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/OOP_CW/RentalVehicleManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/OOP_CW/RentalVehicleManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/OOP_CW/WestminsterRentalVehicleManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/OOP_CW/WestminsterRentalVehicleManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -51,6 +47,7 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="create.test.in.the.same.root" value="true" />
+    <property name="extract.method.default.visibility" value="private" />
     <property name="last_opened_file_path" value="$USER_HOME$/Downloads/dbunit-2.6.0.jar!/" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -63,6 +60,7 @@
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
@@ -73,7 +71,6 @@
       <recent name="" />
     </key>
   </component>
-<<<<<<< HEAD
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -87,9 +84,6 @@
     </option>
   </component>
   <component name="RunManager" selected="Application.WestminsterRentalVehicleManager">
-=======
-  <component name="RunManager">
->>>>>>> 234849e00eb9715707da141fc457142653405bf9
     <configuration name="WestminsterRentalVehicleManager" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.OOP_CW.WestminsterRentalVehicleManager" />
       <module name="RentalManagementSystem" />
@@ -125,18 +119,6 @@
         <item itemvalue="JUnit.WestminsterRentalVehicleManagerTest.checkParkingAvailable" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -218,25 +200,15 @@
     <option name="LAST_COMMIT_MESSAGE" value="Table view for vehicles in lot" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="768" y="212" width="374" height="626" key="#com.intellij.ide.util.MemberChooser" timestamp="1575188653632">
-      <screen x="0" y="27" width="1920" height="998" />
-    </state>
-    <state x="768" y="212" width="374" height="626" key="#com.intellij.ide.util.MemberChooser/0.27.1920.998@0.27.1920.998" timestamp="1575188653632" />
-    <state width="1874" height="290" key="GridCell.Tab.0.bottom" timestamp="1575192835741">
-      <screen x="0" y="27" width="1920" height="998" />
-    </state>
-    <state width="1874" height="290" key="GridCell.Tab.0.bottom/0.27.1920.998@0.27.1920.998" timestamp="1575192835741" />
-    <state width="1874" height="290" key="GridCell.Tab.0.center" timestamp="1575192835740">
-      <screen x="0" y="27" width="1920" height="998" />
-    </state>
-    <state width="1874" height="290" key="GridCell.Tab.0.center/0.27.1920.998@0.27.1920.998" timestamp="1575192835740" />
-    <state width="1874" height="290" key="GridCell.Tab.0.left" timestamp="1575192835740">
-      <screen x="0" y="27" width="1920" height="998" />
-    </state>
-    <state width="1874" height="290" key="GridCell.Tab.0.left/0.27.1920.998@0.27.1920.998" timestamp="1575192835740" />
-    <state width="1874" height="290" key="GridCell.Tab.0.right" timestamp="1575192835741">
-      <screen x="0" y="27" width="1920" height="998" />
-    </state>
-    <state width="1874" height="290" key="GridCell.Tab.0.right/0.27.1920.998@0.27.1920.998" timestamp="1575192835741" />
+    <state x="768" y="212" width="374" height="626" key="#com.intellij.ide.util.MemberChooser" />
+    <state x="768" y="212" width="374" height="626" key="#com.intellij.ide.util.MemberChooser/0.27.1920.998@0.27.1920.998" />
+    <state width="1874" height="290" key="GridCell.Tab.0.bottom" />
+    <state width="1874" height="290" key="GridCell.Tab.0.bottom/0.27.1920.998@0.27.1920.998" />
+    <state width="1874" height="290" key="GridCell.Tab.0.center" />
+    <state width="1874" height="290" key="GridCell.Tab.0.center/0.27.1920.998@0.27.1920.998" />
+    <state width="1874" height="290" key="GridCell.Tab.0.left" />
+    <state width="1874" height="290" key="GridCell.Tab.0.left/0.27.1920.998@0.27.1920.998" />
+    <state width="1874" height="290" key="GridCell.Tab.0.right" />
+    <state width="1874" height="290" key="GridCell.Tab.0.right/0.27.1920.998@0.27.1920.998" />
   </component>
 </project>
