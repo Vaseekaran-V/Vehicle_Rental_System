@@ -467,9 +467,9 @@ public class WestminsterRentalVehicleManager implements RentalVehicleManager {
                         break;
 
                     default:
+
                         System.out.println("Incorrect choice. Enter a number between 1 and 2");
                         bigCheck = true;
-
                 }
             }
         } else{
@@ -633,6 +633,10 @@ public class WestminsterRentalVehicleManager implements RentalVehicleManager {
 
     public void setBikeList(List<Document> bikeList) {
         this.bikeList = bikeList;
+    }
+
+    public ConnectDB getConn() {
+        return conn;
     }
 
     public List<String> getAddedPlates() {

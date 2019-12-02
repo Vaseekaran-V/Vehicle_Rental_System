@@ -14,8 +14,8 @@
             prefHeight="400.0" prefWidth="600.0" >
     <top>
         <HBox alignment="TOP_RIGHT" spacing="10" style="-fx-padding: 10">
-            <Button text="Login"/>
-            <Button text="Signup"/>
+            <Button text="Login" onAction="#onLoginClicked"/>
+            <Button text="Signup" onAction="#onSignupClicked"/>
         </HBox>
     </top>
 
@@ -24,10 +24,10 @@
             <padding>
                 <Insets right="5" left="5" top="5" bottom="5"/>
             </padding>
-            <ComboBox fx:id="vehicleChoice" promptText="Select a Vehicle type" onMouseClicked="#listVehicleTypes" VBox.vgrow="ALWAYS">
+            <ComboBox fx:id="vehicleChoice" promptText="Select a Vehicle type" onMouseClicked="#listVehicleTypes" onAction="#handleClickVehicleChoice" VBox.vgrow="ALWAYS">
             </ComboBox>
             <TextField promptText="Search Here"/>
-            <ListView fx:id="vehicleListView"  onMouseClicked="#handleClickListView"></ListView>
+            <ListView fx:id="vehicleListView"  onMouseClicked="#handleClickListView" ></ListView>
         </VBox>
 
     </left>
@@ -50,7 +50,7 @@
                     <Insets right="10" left="10" top="10" bottom="10"/>
                 </padding>
             </Label>
-            <HBox spacing="10" style="-fx-border-color: blue; -fx-padding: inherit" >
+            <HBox spacing="10" style="-fx-padding: inherit" >
                 <DatePicker promptText="start date" />
                 <DatePicker promptText="end date"/>
                 <Button text="Check Availablity"/>

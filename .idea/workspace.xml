@@ -1,18 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="045914ba-c134-4f72-ab94-9dc14338cd0f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/OOP_CW/WestminsterRentalVehicleManagerTest.java" afterDir="false" />
+    <list default="true" id="045914ba-c134-4f72-ab94-9dc14338cd0f" name="Default Changelist" comment="clean code">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/RentalManagementSystem/com/vehicleRentalGUI/controllers/ConnectDB.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/RentalManagementSystem/com/vehicleRentalGUI/controllers/SignupController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/RentalManagementSystem/com/vehicleRentalGUI/controllers/User.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/RentalManagementSystem/com/vehicleRentalGUI/views/signup.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/vehicleRentalGUI/controllers/ConnectDB.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/vehicleRentalGUI/controllers/SignupController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/vehicleRentalGUI/controllers/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/vehicleRentalGUI/views/signup.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RentalManagementSystem.iml" beforeDir="false" afterPath="$PROJECT_DIR$/RentalManagementSystem.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vehicles in Lot.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Vehicles in Lot.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RentalManagementSystem/com/OOP_CW/ConnectDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RentalManagementSystem/com/OOP_CW/ConnectDB.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RentalManagementSystem/com/OOP_CW/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RentalManagementSystem/com/OOP_CW/Customer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/RentalManagementSystem/com/OOP_CW/WestminsterRentalVehicleManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RentalManagementSystem/com/OOP_CW/WestminsterRentalVehicleManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/OOP_CW/Bike.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/OOP_CW/Bike.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/OOP_CW/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/OOP_CW/Car.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/OOP_CW/ConnectDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/OOP_CW/ConnectDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/OOP_CW/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/OOP_CW/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/OOP_CW/RentalVehicleManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/OOP_CW/RentalVehicleManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RentalManagementSystem/com/OOP_CW/WestminsterRentalVehicleManagerTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RentalManagementSystem/com/vehicleRentalGUI/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RentalManagementSystem/com/vehicleRentalGUI/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RentalManagementSystem/com/vehicleRentalGUI/controllers/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RentalManagementSystem/com/vehicleRentalGUI/controllers/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RentalManagementSystem/com/vehicleRentalGUI/controllers/VehicleListController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RentalManagementSystem/com/vehicleRentalGUI/controllers/VehicleListController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RentalManagementSystem/com/vehicleRentalGUI/views/vehicleList.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RentalManagementSystem/com/vehicleRentalGUI/views/vehicleList.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/OOP_CW/WestminsterRentalVehicleManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/OOP_CW/WestminsterRentalVehicleManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/OOP_CW/WestminsterRentalVehicleManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/OOP_CW/WestminsterRentalVehicleManagerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/vehicleRentalGUI/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/vehicleRentalGUI/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/vehicleRentalGUI/controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/vehicleRentalGUI/controllers/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/vehicleRentalGUI/controllers/VehicleListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/vehicleRentalGUI/controllers/VehicleListController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/vehicleRentalGUI/views/vehicleList.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/vehicleRentalGUI/views/vehicleList.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,8 +36,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="JUnit4 Test Class" />
+        <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -34,6 +48,11 @@
   <component name="ProjectId" id="1UIQ0LH5Yx836Bltj3Xi500BNEU" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
@@ -48,7 +67,7 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="create.test.in.the.same.root" value="true" />
     <property name="extract.method.default.visibility" value="private" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/dbunit-2.6.0.jar!/" />
+    <property name="last_opened_file_path" value="/usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/lib/ext/jfxrt.jar!/" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -58,7 +77,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="SDKs" />
-    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.proportion" value="0.23875" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
@@ -69,6 +88,9 @@
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.vehicleRentalGUI.ConnectDB" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -97,7 +119,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="WestminsterRentalVehicleManagerTest.checkParkingAvailable" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="WestminsterRentalVehicleManagerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="RentalManagementSystem" />
       <extension name="coverage">
         <pattern>
@@ -107,7 +129,38 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.OOP_CW" />
       <option name="MAIN_CLASS_NAME" value="com.OOP_CW.WestminsterRentalVehicleManagerTest" />
-      <option name="METHOD_NAME" value="checkParkingAvailable" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WestminsterRentalVehicleManagerTest.addVehicle" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RentalManagementSystem" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.OOP_CW.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.OOP_CW" />
+      <option name="MAIN_CLASS_NAME" value="com.OOP_CW.WestminsterRentalVehicleManagerTest" />
+      <option name="METHOD_NAME" value="addVehicle" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WestminsterRentalVehicleManagerTest.deleteVehicle" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RentalManagementSystem" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.OOP_CW.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.OOP_CW" />
+      <option name="MAIN_CLASS_NAME" value="com.OOP_CW.WestminsterRentalVehicleManagerTest" />
+      <option name="METHOD_NAME" value="deleteVehicle" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -116,7 +169,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.WestminsterRentalVehicleManager" />
-        <item itemvalue="JUnit.WestminsterRentalVehicleManagerTest.checkParkingAvailable" />
+        <item itemvalue="JUnit.WestminsterRentalVehicleManagerTest.addVehicle" />
+        <item itemvalue="JUnit.WestminsterRentalVehicleManagerTest" />
+        <item itemvalue="JUnit.WestminsterRentalVehicleManagerTest.deleteVehicle" />
       </list>
     </recent_temporary>
   </component>
@@ -131,6 +186,7 @@
       <option name="presentableId" value="Default" />
       <updated>1575041405226</updated>
       <workItem from="1575041406695" duration="80003000" />
+      <workItem from="1575265784122" duration="7603000" />
     </task>
     <task id="LOCAL-00001" summary="Added Delete and updated Add">
       <created>1575114094437</created>
@@ -197,11 +253,17 @@
     <MESSAGE value="Updated checking plate" />
     <MESSAGE value="Added Print Vehicle" />
     <MESSAGE value="Table view for vehicles in lot" />
-    <option name="LAST_COMMIT_MESSAGE" value="Table view for vehicles in lot" />
+    <MESSAGE value="cleaned code" />
+    <MESSAGE value="clean code" />
+    <option name="LAST_COMMIT_MESSAGE" value="clean code" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="693" y="283" width="524" height="484" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" />
+    <state x="693" y="283" width="524" height="484" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.27.1920.998@0.27.1920.998" />
     <state x="768" y="212" width="374" height="626" key="#com.intellij.ide.util.MemberChooser" />
     <state x="768" y="212" width="374" height="626" key="#com.intellij.ide.util.MemberChooser/0.27.1920.998@0.27.1920.998" />
+    <state x="738" y="282" width="424" height="484" key="FileChooserDialogImpl" />
+    <state x="738" y="282" width="424" height="484" key="FileChooserDialogImpl/0.27.1920.998@0.27.1920.998" />
     <state width="1874" height="290" key="GridCell.Tab.0.bottom" />
     <state width="1874" height="290" key="GridCell.Tab.0.bottom/0.27.1920.998@0.27.1920.998" />
     <state width="1874" height="290" key="GridCell.Tab.0.center" />
@@ -210,5 +272,13 @@
     <state width="1874" height="290" key="GridCell.Tab.0.left/0.27.1920.998@0.27.1920.998" />
     <state width="1874" height="290" key="GridCell.Tab.0.right" />
     <state width="1874" height="290" key="GridCell.Tab.0.right/0.27.1920.998@0.27.1920.998" />
+    <state x="443" y="102" width="1024" height="845" key="SettingsEditor" />
+    <state x="443" y="102" width="1024" height="845" key="SettingsEditor/0.27.1920.998@0.27.1920.998" />
+    <state x="616" y="352" key="com.intellij.ide.util.TipDialog" />
+    <state x="616" y="352" key="com.intellij.ide.util.TipDialog/0.27.1920.998@0.27.1920.998" />
+    <state x="627" y="421" width="646" height="208" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" />
+    <state x="627" y="421" width="646" height="208" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.27.1920.998@0.27.1920.998" />
+    <state x="689" y="230" width="532" height="590" key="com.intellij.testIntegration.createTest.CreateTestDialog" />
+    <state x="689" y="230" width="532" height="590" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.27.1920.998@0.27.1920.998" />
   </component>
 </project>
