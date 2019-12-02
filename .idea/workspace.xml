@@ -2,16 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="045914ba-c134-4f72-ab94-9dc14338cd0f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/vehicleRentalGUI/controllers/ConnectDB.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/vehicleRentalGUI/controllers/SignupController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/vehicleRentalGUI/controllers/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/vehicleRentalGUI/views/signup.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RentalManagementSystem/com/OOP_CW/WestminsterRentalVehicleManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RentalManagementSystem/com/OOP_CW/WestminsterRentalVehicleManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RentalManagementSystem/com/vehicleRentalGUI/controllers/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RentalManagementSystem/com/vehicleRentalGUI/controllers/LoginController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/RentalManagementSystem/com/vehicleRentalGUI/controllers/VehicleListController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RentalManagementSystem/com/vehicleRentalGUI/controllers/VehicleListController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RentalManagementSystem/com/vehicleRentalGUI/views/vehicleList.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RentalManagementSystem/com/vehicleRentalGUI/views/vehicleList.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/OOP_CW/WestminsterRentalVehicleManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/OOP_CW/WestminsterRentalVehicleManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/vehicleRentalGUI/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/vehicleRentalGUI/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/vehicleRentalGUI/controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/vehicleRentalGUI/controllers/LoginController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/vehicleRentalGUI/controllers/VehicleListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/vehicleRentalGUI/controllers/VehicleListController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/vehicleRentalGUI/views/vehicleList.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/vehicleRentalGUI/views/vehicleList.fxml" afterDir="false" />
@@ -172,7 +166,7 @@
       <option name="presentableId" value="Default" />
       <updated>1575041405226</updated>
       <workItem from="1575041406695" duration="80003000" />
-      <workItem from="1575265784122" duration="6943000" />
+      <workItem from="1575265784122" duration="7603000" />
     </task>
     <task id="LOCAL-00001" summary="Added Delete and updated Add">
       <created>1575114094437</created>
@@ -254,22 +248,22 @@
       <screen x="0" y="27" width="1920" height="998" />
     </state>
     <state x="738" y="282" width="424" height="484" key="FileChooserDialogImpl/0.27.1920.998@0.27.1920.998" timestamp="1575249319749" />
-    <state width="1874" height="290" key="GridCell.Tab.0.bottom" timestamp="1575277044428">
+    <state width="1874" height="290" key="GridCell.Tab.0.bottom" timestamp="1575277586123">
       <screen x="0" y="27" width="1920" height="998" />
     </state>
-    <state width="1874" height="290" key="GridCell.Tab.0.bottom/0.27.1920.998@0.27.1920.998" timestamp="1575277044428" />
-    <state width="1874" height="290" key="GridCell.Tab.0.center" timestamp="1575277044427">
+    <state width="1874" height="290" key="GridCell.Tab.0.bottom/0.27.1920.998@0.27.1920.998" timestamp="1575277586123" />
+    <state width="1874" height="290" key="GridCell.Tab.0.center" timestamp="1575277586123">
       <screen x="0" y="27" width="1920" height="998" />
     </state>
-    <state width="1874" height="290" key="GridCell.Tab.0.center/0.27.1920.998@0.27.1920.998" timestamp="1575277044427" />
-    <state width="1874" height="290" key="GridCell.Tab.0.left" timestamp="1575277044427">
+    <state width="1874" height="290" key="GridCell.Tab.0.center/0.27.1920.998@0.27.1920.998" timestamp="1575277586123" />
+    <state width="1874" height="290" key="GridCell.Tab.0.left" timestamp="1575277586122">
       <screen x="0" y="27" width="1920" height="998" />
     </state>
-    <state width="1874" height="290" key="GridCell.Tab.0.left/0.27.1920.998@0.27.1920.998" timestamp="1575277044427" />
-    <state width="1874" height="290" key="GridCell.Tab.0.right" timestamp="1575277044428">
+    <state width="1874" height="290" key="GridCell.Tab.0.left/0.27.1920.998@0.27.1920.998" timestamp="1575277586122" />
+    <state width="1874" height="290" key="GridCell.Tab.0.right" timestamp="1575277586123">
       <screen x="0" y="27" width="1920" height="998" />
     </state>
-    <state width="1874" height="290" key="GridCell.Tab.0.right/0.27.1920.998@0.27.1920.998" timestamp="1575277044428" />
+    <state width="1874" height="290" key="GridCell.Tab.0.right/0.27.1920.998@0.27.1920.998" timestamp="1575277586123" />
     <state x="443" y="102" width="1024" height="845" key="SettingsEditor" timestamp="1575249325913">
       <screen x="0" y="27" width="1920" height="998" />
     </state>

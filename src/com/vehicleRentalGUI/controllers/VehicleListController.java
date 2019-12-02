@@ -50,7 +50,6 @@ public class VehicleListController {
     public void handleClickListView(){
         Vehicle vehicle = vehicleListView.getSelectionModel().getSelectedItem();
         System.out.println(vehicleListView.getSelectionModel().getSelectedItem());
-////        itemDetailsTextArea.setText(item.getDescription());
         StringBuilder sb = new StringBuilder("Make\t : \t"+vehicle.getMake());
         sb.append("\n\n");
         sb.append("Model\t : \t"+vehicle.getModel());

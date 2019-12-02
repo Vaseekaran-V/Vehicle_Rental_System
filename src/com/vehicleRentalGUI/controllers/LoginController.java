@@ -92,7 +92,9 @@ public class LoginController {
     }
 
     @FXML
-    public void onCancelClicked(){
-        System.exit(0);
+    public void onCancelClicked(ActionEvent event){
+        Node source = (Node)  event.getSource();
+        Stage stage  = (Stage) source.getScene().getWindow();
+        stage.close();
     }
 }

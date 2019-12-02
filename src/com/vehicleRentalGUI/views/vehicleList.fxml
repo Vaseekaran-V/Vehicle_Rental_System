@@ -50,7 +50,7 @@
                     <Insets right="10" left="10" top="10" bottom="10"/>
                 </padding>
             </Label>
-            <HBox spacing="10" style="-fx-border-color: blue; -fx-padding: inherit" >
+            <HBox spacing="10" style="-fx-padding: inherit" >
                 <DatePicker promptText="start date" />
                 <DatePicker promptText="end date"/>
                 <Button text="Check Availablity"/>
